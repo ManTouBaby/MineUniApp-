@@ -1,0 +1,39 @@
+.mf,
+.mf-horizontal-center,
+.mf-horizontal-end,
+.mf-horizontal-space-between,
+.mf-horizontal-start,
+.mf-vertical-center,
+.mf-vertical-end,
+.mf-vertical-start
+{
+	display: flex;
+}
+
+.mf-horizontal-center {
+	justify-content: center;
+}
+
+.mf-horizontal-start {
+	justify-content: flex-start;
+}
+
+.mf-horizontal-end {
+	justify-content: flex-end;
+}
+
+.mf-horizontal-space-between {
+	justify-content: space-between;
+}
+
+.mf-vertical-center {
+	align-items: center;
+}
+
+.mf-vertical-start {
+	align-items: flex-start;
+}
+
+.mf-vertical-end {
+	align-items: flex-end;
+}

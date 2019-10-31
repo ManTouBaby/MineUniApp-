@@ -17,4 +17,5 @@
 	@import './common/uni.css';
 	@import './common/animate.css';
 	@import './common/icon.css';
+	@import './common/base.css';
 </style>
