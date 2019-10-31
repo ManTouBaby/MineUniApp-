@@ -1073,7 +1073,7 @@ Z([3,'line1 mf-horizontal-space-between'])
 Z([3,'mf-vertical-center linel'])
 Z([3,'../../static/pic/demo66.jpg'])
 Z([3,'张德来'])
-Z([3,'mf-horizontal-end liner'])
+Z([3,'mf-horizontal-end mf-vertical-center liner'])
 Z([3,'icon iconfont icon-zengjia'])
 Z([3,'关注'])
 Z([3,'mf icon iconfont icon-guanbi'])
@@ -1090,7 +1090,7 @@ Z([3,'120'])
 Z([3,'icon iconfont icon-kulian'])
 Z(z[18])
 Z([3,'9'])
-Z(z[6])
+Z([3,'mf-horizontal-end liner'])
 Z([3,'icon iconfont icon-pinglun1'])
 Z(z[18])
 Z([3,'67'])
@@ -1350,7 +1350,7 @@ __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 __wxAppCode__['pages/dongtai/dongtai.wxss']=undefined;    
 __wxAppCode__['pages/dongtai/dongtai.wxml']=$gwx('./pages/dongtai/dongtai.wxml');
 
-__wxAppCode__['pages/index/index.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"itemBox { padding: ",[0,32],"; border-bottom: solid #F1F1F1 ",[0,2],"; }\n.",[1],"itemBox .",[1],"line1 .",[1],"linel { color: #AAAAAA; }\n.",[1],"itemBox .",[1],"line1 .",[1],"linel wx-image { width: ",[0,80],"; height: ",[0,80],"; border-radius: 100%; margin-right: ",[0,16],"; }\n.",[1],"itemBox .",[1],"line1 .",[1],"liner { font-size: ",[0,20],"; }\n.",[1],"itemBox .",[1],"line1 .",[1],"liner:first-child { color: #333333; background-color: #F4F4F4; }\n.",[1],"itemBox .",[1],"line2 { padding: ",[0,16]," 0; }\n.",[1],"itemBox .",[1],"line3 { border-radius: ",[0,16],"; height: ",[0,340],"; overflow: hidden; }\n.",[1],"itemBox .",[1],"line3 wx-image { width: 100%; height: 100%; }\n.",[1],"itemBox .",[1],"line4 { color: #D5D5D5; }\n.",[1],"itemBox .",[1],"line4 .",[1],"linel wx-view { margin-right: ",[0,16],"; font-size: ",[0,28],"; }\n.",[1],"itemBox .",[1],"line4 .",[1],"liner wx-view { margin-left: ",[0,16],"; font-size: ",[0,28],"; }\n",],undefined,{path:"./pages/index/index.wxss"});    
+__wxAppCode__['pages/index/index.wxss']=setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"itemBox { padding: ",[0,24],"; border-bottom: solid #F1F1F1 ",[0,2],"; }\n.",[1],"itemBox .",[1],"line1 .",[1],"linel { color: #AAAAAA; }\n.",[1],"itemBox .",[1],"line1 .",[1],"linel wx-image { width: ",[0,80],"; height: ",[0,80],"; border-radius: 100%; margin-right: ",[0,16],"; }\n.",[1],"itemBox .",[1],"line1 .",[1],"liner:first-child { font-size: ",[0,20],"; color: #333333; background-color: #F4F4F4; }\n.",[1],"itemBox .",[1],"line2 { padding: ",[0,16]," 0; }\n.",[1],"itemBox .",[1],"line3 { border-radius: ",[0,16],"; height: ",[0,340],"; overflow: hidden; margin: ",[0,16]," 0; }\n.",[1],"itemBox .",[1],"line3 wx-image { width: 100%; height: 100%; }\n.",[1],"itemBox .",[1],"line4 { color: #D5D5D5; }\n.",[1],"itemBox .",[1],"line4 .",[1],"linel wx-view { margin-right: ",[0,16],"; font-size: ",[0,28],"; }\n.",[1],"itemBox .",[1],"line4 .",[1],"liner wx-view { margin-left: ",[0,16],"; font-size: ",[0,28],"; }\n",],undefined,{path:"./pages/index/index.wxss"});    
 __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 
 __wxAppCode__['pages/mine/mine.wxss']=undefined;    

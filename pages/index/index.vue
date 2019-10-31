@@ -6,7 +6,7 @@
 					<image src="../../static/pic/demo66.jpg" mode=""></image>
 					张德来
 				</view>
-				<view class="mf-horizontal-end liner">
+				<view class="mf-horizontal-end mf-vertical-center liner">
 					<view class="icon iconfont icon-zengjia">
 						关注
 					</view>
@@ -55,7 +55,7 @@
 
 <style lang="scss">
 	.itemBox {
-		padding: 32upx;
+		padding: 24upx;
 		border-bottom:solid #F1F1F1 2upx;
 
 		.line1 {
@@ -71,16 +71,26 @@
 				}
 			}
 
-			.liner {
+			.liner:first-child{
 				font-size: 20upx;
-				&:first-child{
-					color: #333333;
-					background-color: #F4F4F4;
-				}
-				&:last-child{
-					
-				}
+				color: #333333;
+				background-color: #F4F4F4;
 			}
+			// .liner:last-child{
+			// 	font-size: 20upx;
+			// }
+			// .liner {
+			// 	font-size: 20upx;
+			// 	&:nth-child(1){
+			// 		color: #333333;
+			// 		background-color: #F4F4F4;
+			// 	}
+			// 	&:first-child{
+			// 		color: #333333;
+			// 		background-color: #F4F4F4;
+			// 	};
+			
+			// }
 			
 		}
 
@@ -92,7 +102,7 @@
 			border-radius: 16upx;
 			height: 340upx;
 			overflow: hidden;
-
+			margin: 16upx 0;
 			image {
 				width: 100%;
 				height: 100%;
