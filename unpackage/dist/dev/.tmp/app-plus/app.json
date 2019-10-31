@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/dongtai/dongtai",
+    "pages/xiaozhitiao/xiaozhitiao",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "糗事百科",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFF",
+    "color": "#B8B8B8",
+    "selectedColor": "#FEE42E",
+    "list": [
+      {
+        "iconPath": "static/icon-home.png",
+        "selectedIconPath": "static/icon-home-select.png",
+        "text": "糗事",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "iconPath": "static/icon-dongtai.png",
+        "selectedIconPath": "static/icon-dongtai-select.png",
+        "pagePath": "pages/dongtai/dongtai",
+        "text": "动态"
+      },
+      {
+        "iconPath": "static/icon-xiaozhitiao.png",
+        "selectedIconPath": "static/icon-xiaozhitiao-select.png",
+        "pagePath": "pages/xiaozhitiao/xiaozhitiao",
+        "text": "小纸条"
+      },
+      {
+        "iconPath": "static/icon-me.png",
+        "selectedIconPath": "static/icon-me-select.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "MineUniApp-QSBaiKe",
+  "compilerVersion": "2.3.7",
+  "usingComponents": {}
+}

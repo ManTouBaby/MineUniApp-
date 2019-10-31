@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"MineUniApp-QSBaiKe","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"scrollIndicator":"none","titleNView":{"searchInput":{"borderRadius":"4px","placeholder":"搜索糗事","disabled":true,"backgroundColor":"#F7F7F7"},"buttons":[{"color":"#FF961A","colorPressed":"#BBBBBB","fontSize":"22px","float":"left","fontSrc":"static/font/icon.ttf","text":""},{"color":"#000000","colorPressed":"#BBBBBB","fontSize":"22px","float":"right","fontSrc":"static/font/icon.ttf","text":""}]},"usingComponents":{}}},"pages/dongtai/dongtai.html":{"window":{"usingComponents":{}}},"pages/xiaozhitiao/xiaozhitiao.html":{"window":{"usingComponents":{}}},"pages/mine/mine.html":{"window":{"usingComponents":{}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"糗事百科","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#FFFFFF"}},"tabBar":{"color":"#B8B8B8","selectedColor":"#FEE42E","backgroundColor":"#FFFFFF","borderStyle":"black","list":[{"iconPath":"static/icon-home.png","selectedIconPath":"static/icon-home-select.png","text":"糗事","pagePath":"pages/index/index.html"},{"iconPath":"static/icon-dongtai.png","selectedIconPath":"static/icon-dongtai-select.png","pagePath":"pages/dongtai/dongtai.html","text":"动态"},{"iconPath":"static/icon-xiaozhitiao.png","selectedIconPath":"static/icon-xiaozhitiao-select.png","pagePath":"pages/xiaozhitiao/xiaozhitiao.html","text":"小纸条"},{"iconPath":"static/icon-me.png","selectedIconPath":"static/icon-me-select.png","pagePath":"pages/mine/mine.html","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/dongtai/dongtai","pages/xiaozhitiao/xiaozhitiao","pages/mine/mine"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.3.7","usingComponents":{}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>
