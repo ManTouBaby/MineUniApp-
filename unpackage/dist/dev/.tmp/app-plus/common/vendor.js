@@ -33,9 +33,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 /* 4 */
-/*!***********************************************!*\
-  !*** E:/GitHub/MineUniApp-QSBaiKe/pages.json ***!
-  \***********************************************/
+/*!**************************************************!*\
+  !*** D:/Study/Git/MineUniApp-QSBaiKe/pages.json ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65,9 +65,9 @@ eval("module.exports = {\"_from\":\"@dcloudio/uni-stat@next\",\"_id\":\"@dcloudi
 
 /***/ }),
 /* 7 */
-/*!****************************************************************!*\
-  !*** E:/GitHub/MineUniApp-QSBaiKe/pages.json?{"type":"style"} ***!
-  \****************************************************************/
+/*!*******************************************************************!*\
+  !*** D:/Study/Git/MineUniApp-QSBaiKe/pages.json?{"type":"style"} ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -76,9 +76,9 @@ eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.de
 
 /***/ }),
 /* 8 */
-/*!***************************************************************!*\
-  !*** E:/GitHub/MineUniApp-QSBaiKe/pages.json?{"type":"stat"} ***!
-  \***************************************************************/
+/*!******************************************************************!*\
+  !*** D:/Study/Git/MineUniApp-QSBaiKe/pages.json?{"type":"stat"} ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
