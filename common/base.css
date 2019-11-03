@@ -5,11 +5,17 @@
 .mf-horizontal-start,
 .mf-vertical-center,
 .mf-vertical-end,
-.mf-vertical-start
+.mf-vertical-start,
+.mf-center
 {
 	display: flex;
 }
 
+.mf-center{
+	flex: 1;
+	justify-content: center;
+	align-content: center;
+}
 .mf-horizontal-center {
 	justify-content: center;
 }

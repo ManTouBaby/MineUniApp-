@@ -1,0 +1,12 @@
+
+.uni-textarea{
+	padding: 16rpx;
+	/* border-bottom: #e1e1e1 solid 1upx; */
+}
+.cell-pd {
+		padding: 22rpx 30rpx;
+}
+.list-pd {
+		margin-top: 50rpx;
+}
+

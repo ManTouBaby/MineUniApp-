@@ -26,5 +26,9 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
+    "load-and-refresh-layout": "/components/common/load-and-refresh-layout",
+    "index-item": "/components/index-item/index-item"
+  }
 }

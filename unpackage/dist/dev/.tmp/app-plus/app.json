@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/dongtai/dongtai",
     "pages/xiaozhitiao/xiaozhitiao",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/publish/publish"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -50,5 +52,9 @@
   },
   "appname": "MineUniApp-QSBaiKe",
   "compilerVersion": "2.3.7",
-  "usingComponents": {}
+  "usingComponents": {
+    "index-item": "/components/index-item/index-item",
+    "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
+    "load-and-refresh-layout": "/components/common/load-and-refresh-layout"
+  }
 }
