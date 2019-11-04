@@ -1,68 +1,56 @@
 <template>
 	<view>
+		<!-- 标题栏 -->
 		<uni-nav-bar :status-bar="true" left-icon="arrowleft" right-text="发布" @click-left="backClick" @click-right="publish">
 			<view class="mf-center" @tap="privacyClick">
 				{{privacy}}
 				<view class="icon iconfont icon-xialazhankai"></view>
 			</view>
 		</uni-nav-bar>
-		
+
+		<!-- 多行输入文本 -->
 		<textarea class="uni-textarea" placeholder="请输入您的糗事"></textarea>
-		
-		<view class="uni-list list-pd">
-			<view class="uni-list-cell cell-pd">
-				<view class="uni-uploader">
-					<view class="uni-uploader-head">
-						<view class="uni-uploader-title">点击可预览选好的图片</view>
-						<view class="uni-uploader-info">{{imageList.length}}/9</view>
-					</view>
-					<view class="uni-uploader-body">
-						<view class="uni-uploader__files">
-							<block v-for="(image,index) in imageList" :key="index">
-								<view class="uni-uploader__file">
-									<image class="uni-uploader__img" :src="image" :data-src="image" @tap="previewImage"></image>
-								</view>
-							</block>
-							<view class="uni-uploader__input-box">
-								<view class="uni-uploader__input" @tap="chooseImage"></view>
-							</view>
-						</view>
-					</view>
+
+		<!-- 图片选择组件 -->
+		<img-upload @updataImgList='updataImgList'></img-upload>
+
+		<!-- 内容编辑提示窗口 -->
+		<uni-popup ref="popup" type="center">
+			<view class="popup-container">
+				<image class="popup-img" src="../../static/addinput.png" mode="widthFix"/>
+				<view class="popup-content">
+						<view>1.发布内容不能涉及黄、赌、毒</view>
+						<view>2.发布内容不能涉及黄、赌、毒</view>
+						<view>3.发布内容不能涉及黄、赌、毒</view>
+						<view>4.发布内容不能涉及黄、赌、毒</view>
 				</view>
+				<button type="primary" class="popup-btn">朕知道了</button>
 			</view>
-		</view>
+			
+		</uni-popup>
+
 	</view>
 </template>
 
 <script>
 	import uniNavBar from '../../components/uni-nav-bar/uni-nav-bar.vue'
-	let privacyList =["仅自己可见","所有人可见"];
-	
-	var sourceType = [
-		['camera'],
-		['album'],
-		['camera', 'album']
-	]
-	var sizeType = [
-		['compressed'],
-		['original'],
-		['compressed', 'original']
-	]
+	import imgUpload from '../../components/common/img-upload.vue'
+	import uniPopup from '../../components/uni-popup/uni-popup.vue'
+
+	let privacyList = ["仅自己可见", "所有人可见"];
+
 	export default {
 		components: {
-			uniNavBar
+			uniNavBar,
+			imgUpload,
+			uniPopup
 		},
 		data() {
 			return {
-				privacy:"仅自己可见",
-				
+				privacy: "仅自己可见",
 				imageList: [],
-				sourceTypeIndex: 2,
-				sourceType: ['拍照', '相册', '拍照或相册'],
-				sizeTypeIndex: 2,
-				sizeType: ['压缩', '原图', '压缩或原图'],
-				countIndex: 8,
-				count: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+				show: true
 			}
 		},
 		onUnload() {
@@ -73,6 +61,9 @@
 				this.sizeType = ['压缩', '原图', '压缩或原图'],
 				this.countIndex = 8;
 		},
+		onLoad() {
+			this.openPopup();
+		},
 		methods: {
 			backClick() {
 				uni.navigateBack({
@@ -82,7 +73,7 @@
 			publish() {
 				console.log("单击发布按钮");
 			},
-			privacyClick(){
+			privacyClick() {
 				uni.showActionSheet({
 					itemList: privacyList,
 					success: res => {
@@ -90,135 +81,36 @@
 					}
 				});
 			},
-			
-			chooseImage: async function() {
-				// #ifdef APP-PLUS
-				// TODO 选择相机或相册时 需要弹出actionsheet，目前无法获得是相机还是相册，在失败回调中处理
-				if (this.sourceTypeIndex !== 2) {
-					let status = await this.checkPermission();
-					if (status !== 1) {
-						return;
-					}
-				}
-				// #endif
-			
-				if (this.imageList.length === 9) {
-					let isContinue = await this.isFullImg();
-					console.log("是否继续?", isContinue);
-					if (!isContinue) {
-						return;
-					}
-				}
-				uni.chooseImage({
-					sourceType: sourceType[this.sourceTypeIndex],
-					sizeType: sizeType[this.sizeTypeIndex],
-					count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
-					success: (res) => {
-						this.imageList = this.imageList.concat(res.tempFilePaths);
-					},
-					fail: (err) => {
-						// #ifdef APP-PLUS
-						if (err['code'] && err.code !== 0 && this.sourceTypeIndex === 2) {
-							this.checkPermission(err.code);
-						}
-						// #endif
-						// #ifdef MP
-						uni.getSetting({
-							success: (res) => {
-								let authStatus = false;
-								switch (this.sourceTypeIndex) {
-									case 0:
-										authStatus = res.authSetting['scope.camera'];
-										break;
-									case 1:
-										authStatus = res.authSetting['scope.album'];
-										break;
-									case 2:
-										authStatus = res.authSetting['scope.album'] && res.authSetting['scope.camera'];
-										break;
-									default:
-										break;
-								}
-								if (!authStatus) {
-									uni.showModal({
-										title: '授权失败',
-										content: 'Hello uni-app需要从您的相机或相册获取图片，请在设置界面打开相关权限',
-										success: (res) => {
-											if (res.confirm) {
-												uni.openSetting()
-											}
-										}
-									})
-								}
-							}
-						})
-						// #endif
-					}
-				})
+			updataImgList(imgList) {
+				console.log(imgList);
 			},
-			isFullImg: function() {
-				return new Promise((res) => {
-					uni.showModal({
-						content: "已经有9张图片了,是否清空现有图片？",
-						success: (e) => {
-							if (e.confirm) {
-								this.imageList = [];
-								res(true);
-							} else {
-								res(false)
-							}
-						},
-						fail: () => {
-							res(false)
-						}
-					})
-				})
+			openPopup() {
+				this.$refs.popup.open()
 			},
-			previewImage: function(e) {
-				var current = e.target.dataset.src
-				uni.previewImage({
-					current: current,
-					urls: this.imageList
-				})
-			},
-			async checkPermission(code) {
-				let type = code ? code - 1 : this.sourceTypeIndex;
-				let status = permision.isIOS ? await permision.requestIOS(sourceType[type][0]) :
-					await permision.requestAndroid(type === 0 ? 'android.permission.CAMERA' :
-						'android.permission.READ_EXTERNAL_STORAGE');
-			
-				if (status === null || status === 1) {
-					status = 1;
-				} else {
-					uni.showModal({
-						content: "没有开启权限",
-						confirmText: "设置",
-						success: function(res) {
-							if (res.confirm) {
-								permision.gotoAppSetting();
-							}
-						}
-					})
-				}
-			
-				return status;
+			closePopup() {
+				this.$refs.popup.close()
 			}
 
 		}
 	}
 </script>
 
-<style>
-.uni-textarea{
-	padding: 16upx;
-	/* border-bottom: #e1e1e1 solid 1upx; */
+<style scoped lang="scss">
+.popup-container{
+	width: 500upx;
+	
+	overflow: hidden;
+	.popup-img{
+		width: 80%;
+		border-radius: 5px;
+		margin-bottom: 24upx;
+	}
+	.popup-btn{
+		color: #121004;
+		margin-top: 24upx;
+		background-color: #FFE934;
+	}
 }
 
-.cell-pd {
-		padding: 22upx 30upx;
-	}
 
-	.list-pd {
-		margin-top: 50upx;
-	}
 </style>

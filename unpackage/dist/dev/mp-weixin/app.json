@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/dongtai/dongtai",
     "pages/xiaozhitiao/xiaozhitiao",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/search/search",
+    "pages/publish/publish"
   ],
   "subPackages": [],
   "window": {
@@ -44,6 +46,9 @@
     ]
   },
   "usingComponents": {
-    "index-item": "/components/index-item/index-item"
-  }
+    "index-item": "/components/index-item/index-item",
+    "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
+    "load-and-refresh-layout": "/components/common/load-and-refresh-layout"
+  },
+  "sitemapLocation": "sitemap.json"
 }
