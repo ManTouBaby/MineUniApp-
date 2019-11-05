@@ -39,7 +39,12 @@
 			}
 		},
 		{
-			"path": "pages/dongtai/dongtai"
+			"path": "pages/dongtai/dongtai",
+			"style":{
+				"app-plus":{
+					"titleNView":false
+				}
+			}
 		},
 		{
 			"path": "pages/xiaozhitiao/xiaozhitiao"

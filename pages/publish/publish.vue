@@ -9,10 +9,10 @@
 		</uni-nav-bar>
 
 		<!-- 多行输入文本 -->
-		<textarea class="uni-textarea" placeholder="请输入您的糗事"></textarea>
+		<textarea class="uni-textarea" placeholder="请输入您的糗事" @blur="bindTextAreaBlur"></textarea>
 
 		<!-- 图片选择组件 -->
-		<img-upload @updataImgList='updataImgList'></img-upload>
+		<img-upload @updateImgList="updateImgList"></img-upload>
 
 		<!-- 内容编辑提示窗口 -->
 		<uni-popup ref="popup" type="center" :custom="true">
@@ -49,24 +49,29 @@
 			return {
 				privacy: "仅自己可见",
 				imageList: [],
+				textareaLable: "",
 
 				show: true,
-
-				noBack: true
+				noback: true
 			}
 		},
 		onLoad() {
 			this.openPopup();
 		},
-		onBackPress: () => {
-			console.log("单击返回按钮");
-			// if (this.)
-			return this.noBack;
+
+		onBackPress() {
+			console.log("捕捉返回按钮");
+			if (this.imageList.length < 1 && this.textareaLable.length < 1) {
+				return;
+			} else {
+				if (this.noback) this.showSaveDialog();
+				return this.noback;
+			}
 		},
 		methods: {
 			//绑定textrea数据
-			bindTextAreaBlur: (e) => {
-				console.log(e.detail.value);
+			bindTextAreaBlur(e) {
+				this.textareaLable = e.detail.value;
 			},
 			//单击返回按钮
 			backClick() {
@@ -88,8 +93,9 @@
 				});
 			},
 			//图片选择监听
-			updataImgList(imgList) {
+			updateImgList(imgList) {
 				console.log(imgList);
+				this.imageList = imgList;
 			},
 			//打开糗事编辑内容提示框
 			openPopup() {
@@ -111,15 +117,14 @@
 					confirmText: "保存",
 					cancelText: "不保存",
 					success: (e) => {
-						if (e.confirm) {
-							this.imageList = [];
-							res(true);
-						} else {
-							res(false)
-						}
+						console.log("执行保存草稿操作");
+						this.noback = false;
+						this.backClick();
 					},
 					fail: () => {
-						res(false)
+						console.log("取消保存草稿操作");
+						this.noback = false;
+						this.backClick();
 					}
 				})
 			}

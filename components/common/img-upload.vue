@@ -73,6 +73,7 @@
 					success: (res) => {
 						this.imageList = this.imageList.concat(res.tempFilePaths);
 						this.$emit("updateImgList", this.imageList);
+						console.log("照片选择成功");
 					},
 					fail: (err) => {
 						// #ifdef APP-PLUS

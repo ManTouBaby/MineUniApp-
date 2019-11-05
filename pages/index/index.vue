@@ -94,8 +94,8 @@
 						let index = Math.random() * indexDates.length;
 						pageData.pageDataList.push(indexDates[parseInt(index)]);
 					}
-					console.log(indexDates);
-					console.log(pageData);
+					// console.log(indexDates);
+					// console.log(pageData);
 					pageData.current++;
 					pageData.loadMoreStatus =0;
 				}, 500)

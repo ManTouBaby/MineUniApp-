@@ -24,16 +24,18 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.popup-container.data-v-661aba82 {
+.popup-container.data-v-b27cfbe4 {
   width: 500rpx;
   border-radius: 5px;
+  padding: 32rpx;
   overflow: hidden;
+  background-color: #FFFFFF;
 }
-.popup-container .popup-img.data-v-661aba82 {
+.popup-container .popup-img.data-v-b27cfbe4 {
     width: 80%;
     margin-bottom: 24rpx;
 }
-.popup-container .popup-btn.data-v-661aba82 {
+.popup-container .popup-btn.data-v-b27cfbe4 {
     color: #121004;
     margin-top: 24rpx;
     background-color: #FFE934;

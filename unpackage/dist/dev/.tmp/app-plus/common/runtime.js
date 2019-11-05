@@ -102,11 +102,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/common/load-and-refresh-layout":1,"components/index-item/index-item":1,"components/mine-nav-bar/mine-nav-bar":1,"components/common/img-upload":1,"components/uni-nav-bar/uni-nav-bar":1,"components/uni-popup/uni-popup":1,"components/uni-icons/uni-icons":1,"components/uni-status-bar/uni-status-bar":1};
+/******/ 		var cssChunks = {"components/common/load-and-refresh-layout":1,"components/index-item/index-item":1,"components/mine-nav-bar/mine-nav-bar":1,"components/uni-nav-bar/uni-nav-bar":1,"components/common/img-upload":1,"components/uni-popup/uni-popup":1,"components/uni-icons/uni-icons":1,"components/uni-status-bar/uni-status-bar":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/common/load-and-refresh-layout":"components/common/load-and-refresh-layout","components/index-item/index-item":"components/index-item/index-item","components/mine-nav-bar/mine-nav-bar":"components/mine-nav-bar/mine-nav-bar","components/common/img-upload":"components/common/img-upload","components/uni-nav-bar/uni-nav-bar":"components/uni-nav-bar/uni-nav-bar","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-status-bar/uni-status-bar":"components/uni-status-bar/uni-status-bar"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/common/load-and-refresh-layout":"components/common/load-and-refresh-layout","components/index-item/index-item":"components/index-item/index-item","components/mine-nav-bar/mine-nav-bar":"components/mine-nav-bar/mine-nav-bar","components/uni-nav-bar/uni-nav-bar":"components/uni-nav-bar/uni-nav-bar","components/common/img-upload":"components/common/img-upload","components/uni-popup/uni-popup":"components/uni-popup/uni-popup","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-status-bar/uni-status-bar":"components/uni-status-bar/uni-status-bar"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

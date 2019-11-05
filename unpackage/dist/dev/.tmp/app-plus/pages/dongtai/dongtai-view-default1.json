@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "dongtai-view-default": "/pages/dongtai/dongtai-view-default",
+    "dongtai-view-default1": "/pages/dongtai/dongtai-view-default1",
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"
+  }
+}

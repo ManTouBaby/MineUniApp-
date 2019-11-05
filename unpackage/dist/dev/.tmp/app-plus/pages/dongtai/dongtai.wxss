@@ -24,18 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.nav-item.activit.data-v-1d7debfc {
-  color: #373737;
+.nav-container view.data-v-0f68d120 {
+  font-size: 47rpx;
 }
-.nav-item.data-v-1d7debfc {
-  font-weight: bold;
-  color: #969696;
-}
-.navbarUnderLine.data-v-1d7debfc {
-  background-color: #FEDE33;
-  height: 6rpx;
-  width: 80rpx;
-  margin: 0 auto;
-  border-radius: 6rpx;
+.nav-container .nav-left view.data-v-0f68d120 {
+  margin-left: 27rpx;
+  color: #FF961A;
 }
 
