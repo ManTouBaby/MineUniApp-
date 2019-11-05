@@ -15,18 +15,18 @@
 		<img-upload @updataImgList='updataImgList'></img-upload>
 
 		<!-- 内容编辑提示窗口 -->
-		<uni-popup ref="popup" type="center">
+		<uni-popup ref="popup" type="center" :custom="true">
 			<view class="popup-container">
-				<image class="popup-img" src="../../static/addinput.png" mode="widthFix"/>
+				<image class="popup-img" src="../../static/addinput.png" mode="widthFix" />
 				<view class="popup-content">
-						<view>1.发布内容不能涉及黄、赌、毒</view>
-						<view>2.发布内容不能涉及黄、赌、毒</view>
-						<view>3.发布内容不能涉及黄、赌、毒</view>
-						<view>4.发布内容不能涉及黄、赌、毒</view>
+					<view>1.发布内容不能涉及黄、赌、毒</view>
+					<view>2.发布内容不能涉及黄、赌、毒</view>
+					<view>3.发布内容不能涉及黄、赌、毒</view>
+					<view>4.发布内容不能涉及黄、赌、毒</view>
 				</view>
-				<button type="primary" class="popup-btn">朕知道了</button>
+				<button type="primary" class="popup-btn" @click="iKnowClick">朕知道了</button>
 			</view>
-			
+
 		</uni-popup>
 
 	</view>
@@ -50,29 +50,35 @@
 				privacy: "仅自己可见",
 				imageList: [],
 
-				show: true
+				show: true,
+
+				noBack: true
 			}
-		},
-		onUnload() {
-			this.imageList = [],
-				this.sourceTypeIndex = 2,
-				this.sourceType = ['拍照', '相册', '拍照或相册'],
-				this.sizeTypeIndex = 2,
-				this.sizeType = ['压缩', '原图', '压缩或原图'],
-				this.countIndex = 8;
 		},
 		onLoad() {
 			this.openPopup();
 		},
+		onBackPress: () => {
+			console.log("单击返回按钮");
+			// if (this.)
+			return this.noBack;
+		},
 		methods: {
+			//绑定textrea数据
+			bindTextAreaBlur: (e) => {
+				console.log(e.detail.value);
+			},
+			//单击返回按钮
 			backClick() {
 				uni.navigateBack({
 					delta: 1
 				});
 			},
+			//单击发布按钮
 			publish() {
 				console.log("单击发布按钮");
 			},
+			//单击隐私按钮
 			privacyClick() {
 				uni.showActionSheet({
 					itemList: privacyList,
@@ -81,14 +87,41 @@
 					}
 				});
 			},
+			//图片选择监听
 			updataImgList(imgList) {
 				console.log(imgList);
 			},
+			//打开糗事编辑内容提示框
 			openPopup() {
 				this.$refs.popup.open()
 			},
+			//关闭糗事编辑内容提示框
 			closePopup() {
 				this.$refs.popup.close()
+			},
+			//提示框关闭按钮
+			iKnowClick() {
+				this.closePopup();
+			},
+			//打开保存提示框
+			showSaveDialog() {
+				uni.showModal({
+					title: "提示",
+					content: "是否保存已编辑内容",
+					confirmText: "保存",
+					cancelText: "不保存",
+					success: (e) => {
+						if (e.confirm) {
+							this.imageList = [];
+							res(true);
+						} else {
+							res(false)
+						}
+					},
+					fail: () => {
+						res(false)
+					}
+				})
 			}
 
 		}
@@ -96,21 +129,22 @@
 </script>
 
 <style scoped lang="scss">
-.popup-container{
-	width: 500upx;
-	
-	overflow: hidden;
-	.popup-img{
-		width: 80%;
+	.popup-container {
+		width: 500upx;
 		border-radius: 5px;
-		margin-bottom: 24upx;
-	}
-	.popup-btn{
-		color: #121004;
-		margin-top: 24upx;
-		background-color: #FFE934;
-	}
-}
+		padding: 32upx;
+		overflow: hidden;
+		background-color: #FFFFFF;
 
+		.popup-img {
+			width: 80%;
+			margin-bottom: 24upx;
+		}
 
+		.popup-btn {
+			color: #121004;
+			margin-top: 24upx;
+			background-color: #FFE934;
+		}
+	}
 </style>
