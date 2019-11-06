@@ -7,11 +7,11 @@
 				<swiper-item v-for="(item,index) in pageDates" :key="index">
 					<loadAndRefreshLayout :loadMoreStatus="item.loadMoreStatus" @loadMore="loadMore">
 						<!-- 展示内容 -->
-						<template v-slot:content>
+						<block slot="content">
 							<block v-for="(item1,index1) in item.pageDataList" :key='index1'>
 								<indexItem :item='item1' :index='index1'></indexItem>
 							</block>
-						</template>
+						</block>
 					</loadAndRefreshLayout>
 				</swiper-item>
 			</swiper>

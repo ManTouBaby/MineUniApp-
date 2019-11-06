@@ -1,18 +1,23 @@
 <template>
 	<view>
 		<!-- 标题栏 -->
-		<uni-nav-bar :status-bar="true" left-icon="arrowleft" right-text="发布" @click-left="backClick" @click-right="publish">
+		<uni-nav-bar fixed="true" :status-bar="true"  left-icon="arrowleft" right-text="发布" @click-left="backClick" @click-right="publish">
 			<view class="mf-center" @tap="privacyClick">
 				{{privacy}}
 				<view class="icon iconfont icon-xialazhankai"></view>
 			</view>
 		</uni-nav-bar>
 
-		<!-- 多行输入文本 -->
-		<textarea class="uni-textarea" placeholder="请输入您的糗事" @blur="bindTextAreaBlur"></textarea>
-
-		<!-- 图片选择组件 -->
-		<img-upload @updateImgList="updateImgList"></img-upload>
+		<scroll-view scroll-y="true" >
+			<view>
+				<!-- 多行输入文本 -->
+				<textarea class="uni-textarea" placeholder="请输入您的糗事" @blur="bindTextAreaBlur"></textarea>
+				
+				<!-- 图片选择组件 -->
+				<img-upload @updateImgList="updateImgList"></img-upload>
+			</view>
+		</scroll-view>
+		
 
 		<!-- 内容编辑提示窗口 -->
 		<uni-popup ref="popup" type="center" :custom="true">

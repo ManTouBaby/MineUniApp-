@@ -42,6 +42,7 @@
 			"path": "pages/dongtai/dongtai",
 			"style":{
 				"app-plus":{
+					"bounce":"none",
 					"titleNView":false
 				}
 			}
@@ -81,7 +82,9 @@
             "path" : "pages/publish/publish",
             "style" : {
 				"app-plus":{
-					"titleNView":false
+					"scrollIndicator":"none",//取消默认滚动条
+					"bounce":"none",//取消页面回弹阴影动画
+					"titleNView":false//取消原生标题栏
 				}
 			}
         }
