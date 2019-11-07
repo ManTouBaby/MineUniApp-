@@ -1,0 +1,1 @@
+<view class="viewBox data-v-db4adea2"><scroll-view class="list data-v-db4adea2" scroll-y="true" data-event-opts="{{[['scrolltolower',[['loadMore',['$event']]]],['scrolltoupper',[['refresh',['$event']]]]]}}" bindscrolltolower="__e" bindscrolltoupper="__e"><slot name="content"></slot><view class="view-load-more data-v-db4adea2">{{''+loadMoreLable+''}}</view></scroll-view></view>

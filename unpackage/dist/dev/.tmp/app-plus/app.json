@@ -55,6 +55,6 @@
   "usingComponents": {
     "index-item": "/components/index-item/index-item",
     "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
-    "load-and-refresh-layout": "/components/common/load-and-refresh-layout"
+    "load-and-refresh-layout": "/components/base/load-and-refresh-layout"
   }
 }

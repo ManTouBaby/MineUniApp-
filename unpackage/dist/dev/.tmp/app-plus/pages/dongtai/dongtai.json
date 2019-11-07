@@ -2,6 +2,8 @@
   "bounce": "none",
   "titleNView": false,
   "usingComponents": {
-    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"
+    "load-and-refresh-layout": "/components/base/load-and-refresh-layout",
+    "new-nav": "/components/common/new-nav",
+    "common-item": "/components/common/common-item"
   }
 }

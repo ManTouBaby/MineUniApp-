@@ -4,7 +4,7 @@
   "titleNView": false,
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
-    "img-upload": "/components/common/img-upload",
+    "img-upload": "/components/base/img-upload",
     "uni-popup": "/components/uni-popup/uni-popup"
   }
 }

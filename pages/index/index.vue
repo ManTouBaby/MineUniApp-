@@ -90,7 +90,7 @@
 					pageData.loadMoreStatus =1;
 				}
 				setTimeout(() => {
-					for (var i = 0; i < 5; i++) {
+					for (let i = 0; i < 5; i++) {
 						let index = Math.random() * indexDates.length;
 						pageData.pageDataList.push(indexDates[parseInt(index)]);
 					}

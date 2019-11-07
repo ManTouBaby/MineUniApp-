@@ -1,7 +1,7 @@
 <template>
 	<view class="uni-tab-bar">
 		<scroll-view scroll-x="true" class="uni-swiper-tab" scroll-with-animation :scroll-into-view="navBartSelectStr">
-			<block v-for="(item,index) in navBarDates" :key="item.id">
+			<block v-for="(item,index) in navBarDates" :key="index">
 				<view class="swiper-tab-list nav-item" :class="{activit:index==navBartSelect}" @tap="navBarClick(index)">
 					{{item.name+item.index}}
 					<view class="navbarUnderLine" v-show="index==navBartSelect"></view>
@@ -22,7 +22,7 @@
 		},
 		data() {
 			return {
-				navBartSelectStr: "",
+				navBartSelectStr: "id"+this.navBartSelect,
 			}
 		},
 		methods: {
@@ -31,12 +31,6 @@
 				this.navBartSelectStr = `id${index}`;
 				// console.log();
 			}
-		},
-		watch: {
-			navBartSelect(){
-				this.navBartSelectStr = `id${this.navBartSelect}`;
-			}
-			
 		}
 	}
 </script>

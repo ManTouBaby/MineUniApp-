@@ -39,7 +39,7 @@
 
 <script>
 	import uniNavBar from '../../components/uni-nav-bar/uni-nav-bar.vue'
-	import imgUpload from '../../components/common/img-upload.vue'
+	import imgUpload from '../../components/base/img-upload.vue'
 	import uniPopup from '../../components/uni-popup/uni-popup.vue'
 
 	let privacyList = ["仅自己可见", "所有人可见"];

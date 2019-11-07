@@ -10,7 +10,7 @@ import indexItem from '@/components/index-item/index-item.vue'
 Vue.component("indexItem",indexItem);
 import navBar from '@/components/mine-nav-bar/mine-nav-bar.vue'
 Vue.component("navBar",navBar);
-import loadAndRefreshLayout from '@/components/common/load-and-refresh-layout.vue'
+import loadAndRefreshLayout from '@/components/base/load-and-refresh-layout.vue'
 Vue.component("loadAndRefreshLayout",loadAndRefreshLayout)
 const app = new Vue({
     ...App

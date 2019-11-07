@@ -2,7 +2,7 @@
 	<view class="itemBox">
 		<view class="line1 mf-horizontal-space-between">
 			<view class="mf-vertical-center ">
-				<image :src="item.userpic" mode="widthFix"></image>
+				<image :src="item.userpic" mode="widthFix" lazy-load></image>
 				{{item.username}}
 			</view>
 
@@ -18,24 +18,24 @@
 			{{item.title}}
 		</view>
 		<view class="line3">
-			<image :src="item.imgurl" mode="aspectFill"></image>
-			<view class="vedio-box" v-if="item.type=='vedio'">
+			<image :src="item.imgurl" mode="aspectFill" lazy-load></image>
+			<view class="vedio-box" v-if="item.type=='video'">
 				<view class="icon iconfont icon-bofang"></view>
 				<view>{{item.playernum}}次播放 {{item.playertime}}</view>
 			</view>
 		</view>
 		<view class="line4 mf-horizontal-space-between">
 			<view class="mf-horizontal-start ">
-				<view class="icon iconfont icon-icon_xiaolian-mian" :class="{active:item.infonum.type==1}"></view>
-				<view class="mf-vertical-center">{{item.infonum.dingnum}}</view>
-				<view class="icon iconfont icon-kulian" :class="{active:item.infonum.type==2}"></view>
-				<view class="mf-vertical-center">{{item.infonum.cainum}}</view>
+				<view class="icon iconfont icon-icon_xiaolian-mian" :class="{active:item.infonum.type==1}">{{item.infonum.dingnum}}</view>
+				<view class="icon iconfont icon-kulian" :class="{active:item.infonum.type==2}">{{item.infonum.cainum}}</view>
 			</view>
 			<view class="mf-horizontal-end ">
-				<view class="icon iconfont icon-pinglun1"></view>
-				<view class="mf-vertical-center">{{item.comment}}</view>
-				<view class="icon iconfont icon-zhuanfa"></view>
-				<view class="mf-vertical-center">{{item.sharenum}}</view>
+				<view class="icon iconfont icon-pinglun1">
+					{{item.comment}}
+				</view>
+				<view class="icon iconfont icon-zhuanfa">
+					{{item.sharenum}}
+				</view>
 			</view>
 		</view>
 	</view>
@@ -45,15 +45,15 @@
 	export default {
 		props: {
 			item: {
-				type:Object,
-				default:null
+				type: Object,
+				default: null
 			},
-			index:{
-				type:Number,
-				default:-1
+			index: {
+				type: Number,
+				default: -1
 			}
 		},
-			
+
 		data() {
 			return {
 
@@ -65,7 +65,7 @@
 <style lang="scss" scoped>
 	$lineBottomSpace:16upx;
 
-	.active{
+	.active {
 		color: #F0AD4E;
 	}
 
@@ -89,12 +89,15 @@
 
 			view:last-child {
 				view:first-child {
-					font-size: 24upx;
+					font-size: 22upx;
 					color: #333333;
 					background-color: #F4F4F4;
 					margin-right: 16upx;
-					padding: 4upx 8upx;
+					padding: 2upx 10upx;
 					border-radius: 8upx;
+					&::before{
+						margin-right: 6upx;
+					}
 				}
 
 				view:last-child {
@@ -123,7 +126,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				
+
 				border-radius: 16upx;
 			}
 
@@ -148,8 +151,8 @@
 					margin-bottom: 8upx;
 
 					color: #FFFFFF;
-					font-size: 24upx;
-					line-height: 24upx;
+					font-size: 20upx;
+					line-height: 16upx;
 					padding: 12upx 16upx;
 					border-radius: 38upx;
 					background-color: rgba($color: #333333, $alpha: .7);
@@ -168,12 +171,18 @@
 			view:first-child {
 				view {
 					margin-right: 16upx;
+					&::before{
+						margin-right: 8upx;
+					}
 				}
 			}
 
 			view:last-child {
 				view {
 					margin-left: 16upx;
+					&::before{
+						margin-right: 8upx;
+					}
 				}
 			}
 		}
