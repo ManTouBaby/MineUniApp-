@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view >
 		<navBar :navBarDates='navBarDates' :navBartSelect="navBartSelect" @navBarClick="navBarClick"></navBar>
 
 		<view class="uni-tab-bar">
@@ -104,14 +104,14 @@
 			pageChange(e) {
 				console.log(e.detail.current)
 				let index = e.detail.current;
-				this.getPageByIndex(index,false);
+			if(this.pageDates[index].pageDataList.length<1)	this.getPageByIndex(index,false);
 				this.navBartSelect = index;
 				this.currentPage = index;
 				// console.log(this.navBartSelectStr);
 			},
 			navBarClick(index) {
 				console.log(index);
-				this.getPageByIndex(index,false);
+				if(this.pageDates[index].pageDataList.length<1)	this.getPageByIndex(index,false);
 				this.currentPage = index;
 			},
 			loadMore() {

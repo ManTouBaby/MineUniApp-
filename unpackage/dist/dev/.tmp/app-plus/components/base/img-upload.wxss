@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.cell-pd.data-v-49704a65 {
+.cell-pd.data-v-6fe3a476 {
   padding: 22rpx 30rpx;
 }
-.list-pd.data-v-49704a65 {
+.list-pd.data-v-6fe3a476 {
   margin-top: 50rpx;
 }
 

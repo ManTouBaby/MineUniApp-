@@ -24,26 +24,26 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.nav-container view.data-v-72ea3534 {
+.nav-container view.data-v-542b8535 {
   font-size: 47rpx;
 }
-.nav-container .nav-left view.data-v-72ea3534 {
+.nav-container .nav-left view.data-v-542b8535 {
   margin-left: 27rpx;
   color: #FF961A;
 }
-.nav-container .nav-center.data-v-72ea3534 {
+.nav-container .nav-center.data-v-542b8535 {
   margin-left: -44rpx;
 }
-.nav-container .nav-center view.data-v-72ea3534 {
+.nav-container .nav-center view.data-v-542b8535 {
     font-size: 35rpx;
     font-weight: bold;
 }
-.nav-container .nav-center .nav-center-item.data-v-72ea3534 {
+.nav-container .nav-center .nav-center-item.data-v-542b8535 {
     padding: 0 16rpx;
     position: relative;
     color: #969696;
 }
-.nav-container .nav-center .nav-center-item view.data-v-72ea3534 {
+.nav-container .nav-center .nav-center-item view.data-v-542b8535 {
       background-color: #FEDE33;
       height: 6rpx;
       width: 80rpx;
@@ -54,7 +54,7 @@
       left: 50%;
       margin-left: -40rpx;
 }
-.nav-container .nav-center .nav-center-item.activity.data-v-72ea3534 {
+.nav-container .nav-center .nav-center-item.activity.data-v-542b8535 {
       color: #373737;
 }
 

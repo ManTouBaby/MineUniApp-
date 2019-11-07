@@ -53,7 +53,8 @@
 		},
 		data() {
 			return {
-				key: value
+				isGuangZhu: false,
+				isDing:0 //0表示没有操作  1表示点赞
 			}
 		},
 	}
