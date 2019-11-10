@@ -1,7 +1,7 @@
 <template>
 	<view class="mine-container">
 		<view v-if="!islogin" class="loginContainer">
-			<view class="loginTypeTitle mf-horizontal-center">
+			<view v-if="false" class="loginTypeTitle mf-horizontal-center">
 				选择登录方式
 			</view>
 			<view class="loginTypeContainer mf-horizontal-space-between">
@@ -77,7 +77,7 @@
 	export default {
 		data() {
 			return {
-				islogin: true
+				islogin: false
 			}
 		},
 		methods: {
@@ -121,7 +121,7 @@
 
 			.accountLogin {
 				color: #474747;
-				margin-top: 42upx;
+				margin-top: 36upx;
 
 				view {
 					margin-left: 8upx;

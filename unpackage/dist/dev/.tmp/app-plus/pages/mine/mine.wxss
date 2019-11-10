@@ -51,7 +51,7 @@
 }
 .mine-container .loginContainer .accountLogin.data-v-42556064 {
       color: #474747;
-      margin-top: 42rpx;
+      margin-top: 36rpx;
 }
 .mine-container .loginContainer .accountLogin view.data-v-42556064 {
         margin-left: 8rpx;
