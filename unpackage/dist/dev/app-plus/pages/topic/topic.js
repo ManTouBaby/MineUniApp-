@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"swiper-box.",[1],"data-v-80b91464 { padding: 0 ",[0,16],"; }\n",],undefined,{path:"./pages/topic/topic.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/topic/topic.wxml') } }));

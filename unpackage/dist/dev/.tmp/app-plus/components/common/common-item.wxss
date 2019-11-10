@@ -46,20 +46,7 @@
 .comment-list-box .box-right .line1 view:first-child view.data-v-4ec1d874:first-child {
         font-size: 24rpx;
         color: #AAAAAA;
-}
-.comment-list-box .box-right .line1 view:first-child view.data-v-4ec1d874:last-child {
-        margin-left: 8rpx;
-        padding: 0 8rpx;
-        font-size: 6rpx;
-        line-height: 24rpx;
-        border-radius: 18rpx;
-        color: #FFFFFF;
-}
-.comment-list-box .box-right .line1 view:first-child view:last-child.showBoy.data-v-4ec1d874 {
-          background-color: #44B3FF;
-}
-.comment-list-box .box-right .line1 view:first-child view:last-child.showGirl.data-v-4ec1d874 {
-          background-color: #DD4A68;
+        margin-right: 8rpx;
 }
 .comment-list-box .box-right .line1 view:last-child view.data-v-4ec1d874:first-child {
         font-size: 18rpx;

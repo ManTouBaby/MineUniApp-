@@ -12,6 +12,8 @@ import navBar from '@/components/mine-nav-bar/mine-nav-bar.vue'
 Vue.component("navBar",navBar);
 import loadAndRefreshLayout from '@/components/base/load-and-refresh-layout.vue'
 Vue.component("loadAndRefreshLayout",loadAndRefreshLayout)
+import loadMore from '@/components/base/load-more.vue'
+Vue.component("loadMore",loadMore)
 const app = new Vue({
     ...App
 })

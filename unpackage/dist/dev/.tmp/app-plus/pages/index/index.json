@@ -13,7 +13,7 @@
         "colorPressed": "#BBBBBB",
         "fontSize": "22px",
         "float": "left",
-        "fontSrc": "static/font/icon.ttf",
+        "fontSrc": "/static/font/icon.ttf",
         "text": ""
       },
       {
@@ -21,7 +21,7 @@
         "colorPressed": "#BBBBBB",
         "fontSize": "22px",
         "float": "right",
-        "fontSrc": "static/font/icon.ttf",
+        "fontSrc": "/static/font/icon.ttf",
         "text": ""
       }
     ]

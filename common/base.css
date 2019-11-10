@@ -43,3 +43,19 @@
 .mf-vertical-end {
 	align-items: flex-end;
 }
+
+.label-breviary-1{
+	max-width: 420upx;
+	white-space: nowrap;
+	text-overflow:ellipsis; 
+	overflow:hidden; 
+}
+.label-breviary-2{
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}

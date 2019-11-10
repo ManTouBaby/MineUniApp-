@@ -1,0 +1,100 @@
+<template>
+	<view v-show="show" class="mine-popup">
+		<view class="popup-shaw " :class="{'mf-vertical-center mf-horizontal-center':showType=='center'}" @tap="closePopup">
+			<view :class="{'leftTop':showType=='leftTop','rightTop':showType=='rightTop'}"><slot></slot></view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		props:{
+			isShow:{
+				type:Boolean,
+				default:false
+			},
+			showType:String,//center 显示在中间  leftTop 显示在左上角  rightTop显示在右上角
+		},
+		data() {
+			return {
+				show: this.isShow
+			}
+		},
+		methods:{
+			closePopup(){
+				this.$emit("onPopupOutsideClick")
+			}
+		},
+		watch:{
+			isShow(isShow){
+				this.show = isShow;
+			}
+		}
+		
+	}
+</script>
+
+<style lang="scss" scoped>
+.mine-popup{
+		.popup-shaw{
+			// width: 100%;
+			// height: 100%;
+			
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 1999;
+			
+			background-color: rgba($color: #000000, $alpha: 0.1);
+			
+			view{
+		
+				
+				border-radius:16upx;
+				overflow: hidden;
+				
+				background-color: #FFFFFF;
+				box-shadow: 2upx 5upx 15upx 2upx;
+				
+				&.leftTop{
+					position: fixed;
+					top: 100upx;
+					left: 24upx;
+				}
+				
+				&.rightTop{
+					position: fixed;
+					top: 100upx;
+					right: 24upx;
+				}
+			}
+			
+		}
+		.popup-content{
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 2000;
+			
+			view{
+				
+				border-radius:16upx;
+				overflow: hidden;
+				
+				background-color: #FFFFFF;
+				box-shadow: 2upx 5upx 15upx 2upx;
+			}
+			
+			
+			// // width: 50%;
+			// z-index: 2000;
+		
+			
+			
+		}
+	}
+</style>

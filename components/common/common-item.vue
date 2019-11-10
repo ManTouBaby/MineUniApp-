@@ -1,5 +1,5 @@
 <template>
-	<view class="comment-list-box mf-horizontal-space-between">
+	<view class="comment-list-box mf-horizontal-space-between animated fadeInLeft">
 		<!-- 左边部分 -->
 		<view class="box-left">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
@@ -11,7 +11,7 @@
 			<view class="line1 mf-horizontal-space-between">
 				<view class="mf-horizontal-start mf-vertical-center">
 					<view>{{item.username}}</view>
-					<view class="icon iconfont" :class="{'icon-nan showBoy':item.sex==0,'icon-nv showGirl':item.sex==1}">{{item.age}}</view>
+					<tag-sex-age :age="item.age" :sex="item.sex"></tag-sex-age>
 				</view>
 				<view class="mf-horizontal-end mf-vertical-center">
 					<view class="icon iconfont icon-zengjia">{{item.isguanzhu?'取消关注':'关注'}}</view>
@@ -47,7 +47,11 @@
 </template>
 
 <script>
+	import tagSexAge from "@/components/common/tag-sex-age.vue"
 	export default {
+		components:{
+			tagSexAge
+		},
 		props: {
 			item: Object
 		},
@@ -84,28 +88,11 @@
 				margin-bottom: $lineBottomSpace;
 
 				view:first-child {
-
 					//昵称
 					view:first-child {
 						font-size: 24upx;
 						color: #AAAAAA;
-					}
-
-					//性别年龄
-					view:last-child {
-						margin-left: 8upx;
-						padding: 0 8upx;
-						font-size: 6upx;
-						line-height: 24upx;
-						border-radius: 18upx;
-						color: #FFFFFF;
-						
-						&.showBoy{
-							background-color: #44B3FF;
-						}
-						&.showGirl{
-							background-color: #DD4A68;
-						}
+						margin-right: 8upx;
 					}
 				}
 

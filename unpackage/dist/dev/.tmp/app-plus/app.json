@@ -2,10 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/dongtai/dongtai",
-    "pages/xiaozhitiao/xiaozhitiao",
+    "pages/paper/paper",
     "pages/mine/mine",
     "pages/search/search",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/topic/topic",
+    "pages/topic-detail/topic-detail",
+    "pages/user-list/user-list"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -33,7 +36,7 @@
       {
         "iconPath": "static/icon-xiaozhitiao.png",
         "selectedIconPath": "static/icon-xiaozhitiao-select.png",
-        "pagePath": "pages/xiaozhitiao/xiaozhitiao",
+        "pagePath": "pages/paper/paper",
         "text": "小纸条"
       },
       {
@@ -55,6 +58,7 @@
   "usingComponents": {
     "index-item": "/components/index-item/index-item",
     "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
-    "load-and-refresh-layout": "/components/base/load-and-refresh-layout"
+    "load-and-refresh-layout": "/components/base/load-and-refresh-layout",
+    "load-more": "/components/base/load-more"
   }
 }

@@ -5,16 +5,18 @@
 			<slot name="content"></slot>
 
 			<!-- 加载跟多 -->
-			<view class="view-load-more">
-				{{loadMoreLable}}
-			</view>
+			<load-more :loadMoreStatus="loadMoreStatus"></load-more>
 
 		</scroll-view>
 	</view>
 </template>
 
 <script>
+	import loadMore from "@/components/base/load-more.vue"
 	export default {
+		components:{
+			loadMore
+		},
 		props: {
 			loadMoreStatus: {
 				type: Number,
@@ -24,7 +26,7 @@
 		},
 		data() {
 			return {
-				loadMoreLable: "上拉加载更多"
+				
 			};
 		},
 		methods: {
@@ -33,22 +35,6 @@
 			},
 			refresh() {
 				this.$emit("refresh")
-			}
-		},
-		watch: {
-			loadMoreStatus() {
-				switch (this.loadMoreStatus) {
-					case 0:
-					this.loadMoreLable ="加载更多数据"
-						break;
-					case 1:
-					this.loadMoreLable ="数据加载中.."
-						break
-					case 2:
-					this.loadMoreLable ="没有更多数据可加载"
-						break
-
-				}
 			}
 		}
 	}

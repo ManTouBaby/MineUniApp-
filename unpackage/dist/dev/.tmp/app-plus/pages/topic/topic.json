@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "话题",
+  "bounce": "none",
+  "scrollIndicator": "none",
+  "usingComponents": {
+    "nav-bar": "/components/mine-nav-bar/mine-nav-bar",
+    "load-and-refresh-layout": "/components/base/load-and-refresh-layout",
+    "topic-item": "/components/topic/topicItem"
+  }
+}

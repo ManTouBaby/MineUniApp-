@@ -1,5 +1,5 @@
 <template>
-	<view >
+	<view>
 		<navBar :navBarDates='navBarDates' :navBartSelect="navBartSelect" @navBarClick="navBarClick"></navBar>
 
 		<view class="uni-tab-bar">
@@ -35,14 +35,15 @@
 
 				pageHeight: Number,
 				currentPage: 0,
-				
+
 				// loadMoreStatus:0
 			}
 		},
 		onLoad() {
 			uni.getSystemInfo({
 				success: (res) => {
-					this.pageHeight = res.windowHeight - uni.upx2px(100)
+					// this.pageHeight = res.windowHeight - uni.upx2px(100)
+					this.pageHeight = res.windowHeight
 				}
 			})
 
@@ -50,13 +51,13 @@
 			this.navBarDates.forEach(item => {
 				this.pageDates.push({
 					pageId: item.index,
-					loadMoreStatus:0,
-					total:5,
-					current:0,
+					loadMoreStatus: 0,
+					total: 5,
+					current: 0,
 					pageDataList: []
 				})
 			})
-			this.getPageByIndex(0,false);
+			this.getPageByIndex(0, false);
 			this.navBartSelectStr = 'id0'
 
 		},
@@ -66,28 +67,28 @@
 			});
 		},
 		onNavigationBarButtonTap(e) {
-			switch (e.index){
+			switch (e.index) {
 				case 0:
-				console.log("单击签到按钮");
+					console.log("单击签到按钮");
 					break;
 				case 1:
-				// console.log("单击发布按钮");
-				uni.navigateTo({
-					url: '../publish/publish'
-				});
+					// console.log("单击发布按钮");
+					uni.navigateTo({
+						url: '../publish/publish'
+					});
 					break;
 			}
 		},
 		methods: {
-			getPageByIndex(index,isLoadMore) {
+			getPageByIndex(index) {
 				let indexDates = json.indexDatas;
 				let pageData = this.pageDates[index];
 				if (pageData.pageDataList.length > 0) {
-					if(pageData.current==pageData.total){
-						pageData.loadMoreStatus=2;
+					if (pageData.current == pageData.total) {
+						pageData.loadMoreStatus = 2;
 						return;
 					}
-					pageData.loadMoreStatus =1;
+					pageData.loadMoreStatus = 1;
 				}
 				setTimeout(() => {
 					for (let i = 0; i < 5; i++) {
@@ -97,25 +98,25 @@
 					// console.log(indexDates);
 					// console.log(pageData);
 					pageData.current++;
-					pageData.loadMoreStatus =0;
+					pageData.loadMoreStatus = 0;
 				}, 500)
 			},
 
 			pageChange(e) {
-				console.log(e.detail.current)
+				// console.log(e.detail.current)
 				let index = e.detail.current;
-			if(this.pageDates[index].pageDataList.length<1)	this.getPageByIndex(index,false);
+				if (this.pageDates[index].pageDataList.length < 1) this.getPageByIndex(index, false);
 				this.navBartSelect = index;
 				this.currentPage = index;
 				// console.log(this.navBartSelectStr);
 			},
 			navBarClick(index) {
-				console.log(index);
-				if(this.pageDates[index].pageDataList.length<1)	this.getPageByIndex(index,false);
+				// console.log(index);
+				if (this.pageDates[index].pageDataList.length < 1) this.getPageByIndex(index, false);
 				this.currentPage = index;
 			},
 			loadMore() {
-				this.getPageByIndex(this.currentPage,true);
+				this.getPageByIndex(this.currentPage);
 			}
 
 		}

@@ -5,6 +5,6 @@
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
     "img-upload": "/components/base/img-upload",
-    "uni-popup": "/components/uni-popup/uni-popup"
+    "m-popup": "/components/base/m-popup"
   }
 }
