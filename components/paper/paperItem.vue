@@ -1,5 +1,5 @@
 <template>
-	<view class="paperItem mf-vertical-center animated fadeInLeft">
+	<view class="paperItem mf-vertical-center animated fadeInLeft m-border-bottom">
 		<view>
 			<image :src="item.userpic" mode="aspectFill" lazy-load></image>
 		</view>
@@ -35,7 +35,7 @@
 <style lang="scss" scoped>
 	.paperItem {
 		padding: 16upx 0;
-		border-bottom: #e1e1e1 1upx solid;
+		// border-bottom: #e1e1e1 1upx solid;
 	
 		&>view:first-child {
 			image {

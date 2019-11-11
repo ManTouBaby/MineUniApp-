@@ -184,6 +184,10 @@
 				}
 			}
         }
+        ,{
+            "path" : "pages/common-detail/common-detail",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

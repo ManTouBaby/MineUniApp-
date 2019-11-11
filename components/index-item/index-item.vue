@@ -1,5 +1,5 @@
 <template>
-	<view class="itemBox animated fadeInLeft">
+	<view class="itemBox animated fadeInLeft m-border-bottom">
 		<view class="line1 mf-horizontal-space-between">
 			<view class="mf-vertical-center ">
 				<image :src="item.userpic" mode="widthFix" lazy-load></image>
@@ -71,7 +71,7 @@
 
 	.itemBox {
 		padding: 24upx;
-		border-bottom: solid #F1F1F1 2upx;
+		// border-bottom: solid #F1F1F1 2upx;
 
 		.line1 {
 			margin-bottom: $lineBottomSpace;

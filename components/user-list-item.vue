@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="userItem mf-horizontal-space-between mf-vertical-center">
+		<view class="m-border-bottom userItem mf-horizontal-space-between mf-vertical-center">
 			<image :src="item1.userPic" mode="aspectFill"></image>
 			<view class="userName">
 				<view>{{item1.userName}}</view>
@@ -33,7 +33,7 @@
 <style lang="scss" scoped>
 .userItem {
 		padding: 24upx 0;
-		border-bottom: solid 1upx #e1e1e1;
+		// border-bottom: solid 1upx #e1e1e1;
 
 		image {
 			flex-grow: 0;

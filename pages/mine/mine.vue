@@ -30,54 +30,54 @@
 			<view class="icon iconfont icon-jinru mf-vertical-center"></view>
 		</view>
 		<view class="mine-menu-container mf-horizontal-center">
-			<view>
-				<view class="mf-center">0</view>
-				<view class="mf-center">糗事</view>
-			</view>
-			<view>
-				<view class="mf-center">0</view>
-				<view class="mf-center">动态</view>
-			</view>
-			<view>
-				<view class="mf-center">0</view>
-				<view class="mf-center">评论</view>
-			</view>
-			<view>
-				<view class="mf-center">0</view>
-				<view class="mf-center">收藏</view>
-			</view>
+			<block v-for="(item,index) in menuList">
+				<view hover-class="hoverClass">
+					<view class="mf-center">{{item.showCount}}</view>
+					<view class="mf-center">{{item.menuName}}</view>
+				</view>
+			</block>
 		</view>
 		<view class="ads-container">
 			<image src="../../static/datapic/13.jpg" mode="aspectFill" />
 		</view>
 		<view class="setting-list">
-			<view class="setting-item mf-horizontal-space-between">
-				<view class="icon iconfont icon-liulan">
-					浏览历史
-				</view>
-				<view class="icon iconfont icon-jinru mf-vertical-center"></view>
-			</view>
-			<view class="setting-item mf-horizontal-space-between">
-				<view class="icon iconfont icon-huiyuanvip">
-					糗百认证
-				</view>
-				<view class="icon iconfont icon-jinru mf-vertical-center"></view>
-			</view>
-			<view  v-if="islogin" class="setting-item mf-horizontal-space-between">
-				<view class="icon iconfont icon-icon_im_keyboard">
-					审核糗事
-				</view>
-				<view class="icon iconfont icon-jinru mf-vertical-center"></view>
-			</view>
+			<m-setting-item iconClass="icon iconfont icon-huiyuanvip" :itemName="'糗百认证'" :isShowRightArrow="true"></m-setting-item>
+			<m-setting-item v-if="islogin" iconClass="icon iconfont icon-icon_im_keyboard" :itemName="'审核糗事'" :isShowRightArrow="true"></m-setting-item>
+			<m-setting-item iconClass="icon iconfont icon-liulan" :itemName="'浏览历史'" :isShowRightArrow="true"></m-setting-item>
 		</view>
 	</view>
 </template>
 
 <script>
+	import mSettingItem from "@/components/base/m-setting-item.vue"
 	export default {
+		components: {
+			mSettingItem
+		},
 		data() {
 			return {
-				islogin: false
+				islogin: false,
+				menuList: [{
+						menuName: '糗事',
+						showCount: 87,
+						menuIndex: 0
+					},
+					{
+						menuName: '动态',
+						showCount: 10165,
+						menuIndex: 0
+					},
+					{
+						menuName: '评论',
+						showCount: 223,
+						menuIndex: 0
+					},
+					{
+						menuName: '收藏',
+						showCount: 45,
+						menuIndex: 0
+					}
+				]
 			}
 		},
 		methods: {
@@ -160,9 +160,14 @@
 		.mine-menu-container {
 			padding: 24upx 0;
 
+			.hoverClass {
+				background-color: #f1f1f1;
+			}
+
 			&>view {
 				width: 24%;
 				line-height: 1.2;
+
 
 				view:first-child {
 					color: #383838;
@@ -179,7 +184,7 @@
 		.ads-container {
 			height: 220upx;
 			padding: 16upx 0 24upx;
-			border-bottom: solid 1upx #F7F7F7;
+			border-bottom: solid 1upx #F1F1F1;
 
 			image {
 				width: 100%;
@@ -190,12 +195,13 @@
 
 		.setting-list {
 			.setting-item {
-				padding:20upx 24upx;
-				border-bottom: solid 1upx #F7F7F7;
+				padding: 12upx 24upx;
+				border-bottom: solid 1upx #F1F1F1;
 
 				view:first-child {
 					color: #343434;
 					font-size: 28upx;
+
 					&:before {
 						font-size: 40upx;
 						color: #57BBFF;

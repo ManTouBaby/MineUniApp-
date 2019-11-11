@@ -64,6 +64,9 @@
 			}
 		},
 		onLoad() {
+			uni.setNavigationBarTitle({
+				title:'话题标题'
+			})
 			this.navBarDates = json.topicRecommentNav;
 			this.navBarDates.forEach(item => {
 				this.pageDates.push({
