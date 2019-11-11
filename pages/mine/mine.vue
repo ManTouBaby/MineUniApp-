@@ -15,7 +15,7 @@
 				<view class="icon iconfont icon-jinru mf-vertical-center"></view>
 			</view>
 		</view>
-		<view v-if="islogin" class="user-info-container mf-horizontal-start">
+		<view v-if="islogin" class="user-info-container mf-horizontal-start" @tap="gotoSpace" hover-class="m-click-bg">
 			<image src="../../static/userpic/10.jpg" mode="widthFix" />
 			<view class="user-content mf-vertical-center">
 				<view>
@@ -30,8 +30,8 @@
 			<view class="icon iconfont icon-jinru mf-vertical-center"></view>
 		</view>
 		<view class="mine-menu-container mf-horizontal-center">
-			<block v-for="(item,index) in menuList">
-				<view hover-class="hoverClass">
+			<block v-for="(item,index) in menuList" :key="index">
+				<view hover-class="m-click-bg">
 					<view class="mf-center">{{item.showCount}}</view>
 					<view class="mf-center">{{item.menuName}}</view>
 				</view>
@@ -56,7 +56,7 @@
 		},
 		data() {
 			return {
-				islogin: false,
+				islogin: true,
 				menuList: [{
 						menuName: '糗事',
 						showCount: 87,
@@ -81,7 +81,11 @@
 			}
 		},
 		methods: {
-
+			gotoSpace() {
+				uni.navigateTo({
+					url: '../person-space/person-space'
+				});
+			}
 		}
 	}
 </script>
@@ -160,9 +164,9 @@
 		.mine-menu-container {
 			padding: 24upx 0;
 
-			.hoverClass {
-				background-color: #f1f1f1;
-			}
+			// .hoverClass {
+			// 	background-color: #f1f1f1;
+			// }
 
 			&>view {
 				width: 24%;

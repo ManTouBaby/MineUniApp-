@@ -48,52 +48,50 @@
 			}
 		},
 		{
-		    "path" : "pages/paper/paper",
-		    "style": {
-		    	"scrollIndicator": "none",
-		    	"navigationBarTitleText": "小纸条",
-				"enablePullDownRefresh":true,
-		    	"app-plus": {
-		    		"bounce": "vertical",
-		    		"titleNView": {
-		    			"buttons": [{
-		    					"float": "left",
-		    					"text": "\ue845",
-		    					"colorPressed": "#BBBBBB",
-		    					"fontSrc": "/static/font/icon.ttf",
-		    					"fontSize": "22px",
-		    					"color": "#000000"
-		    				},
-		    				{
-		    					"float": "right",
-		    					"text": "\ue684",
-		    					"colorPressed": "#BBBBBB",
-		    					"fontSrc": "/static/font/icon.ttf",
-		    					"fontSize": "22px",
-		    					"color": "#000000"
-		    				}
-		    			]
-		    		}
-		    	}
-		    }
-		},
-		{
-			"path": "pages/mine/mine",
-			"style":{
-				"navigationBarTitleText":"我的",
-				"app-plus":{
-					"bounce":"none ",
-					"titleNView":{
-						"buttons":[
+			"path": "pages/paper/paper",
+			"style": {
+				"scrollIndicator": "none",
+				"navigationBarTitleText": "小纸条",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+								"float": "left",
+								"text": "\ue845",
+								"colorPressed": "#BBBBBB",
+								"fontSrc": "/static/font/icon.ttf",
+								"fontSize": "22px",
+								"color": "#000000"
+							},
 							{
 								"float": "right",
-								"text": "\ue6fd",
+								"text": "\ue684",
 								"colorPressed": "#BBBBBB",
 								"fontSrc": "/static/font/icon.ttf",
 								"fontSize": "22px",
 								"color": "#000000"
 							}
 						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"app-plus": {
+					"bounce": "none ",
+					"titleNView": {
+						"buttons": [{
+							"float": "right",
+							"text": "\ue6fd",
+							"colorPressed": "#BBBBBB",
+							"fontSrc": "/static/font/icon.ttf",
+							"fontSize": "22px",
+							"color": "#000000"
+						}]
 					}
 				}
 			}
@@ -129,40 +127,36 @@
 					"titleNView": false //取消原生标题栏
 				}
 			}
-		}
-	    ,{
-            "path" : "pages/topic/topic",
-            "style" : {
-				"navigationBarTitleText":"话题",
-				"app-plus":{
-						"bounce":"none",
-						"scrollIndicator": "none"
+		}, {
+			"path": "pages/topic/topic",
+			"style": {
+				"navigationBarTitleText": "话题",
+				"app-plus": {
+					"bounce": "none",
+					"scrollIndicator": "none"
 				}
 			}
-        }
-        ,{
-            "path" : "pages/topic-detail/topic-detail",
-            "style" : {
-				"navigationBarTitleText":"详情页面",
-				"enablePullDownRefresh":true,
-				"app-plus":{
-					"bounce":"none",
-					"scrollIndicator":"none",
-					"titleNView":{
-						"type":"transparent",
-						"buttons":[
-							{
-								"type":"menu"
-							}
-						]
+		}, {
+			"path": "pages/topic-detail/topic-detail",
+			"style": {
+				"navigationBarTitleText": "详情页面",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"bounce": "none",
+					"scrollIndicator": "none",
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "menu"
+						}]
 					}
 				}
 			}
-        }
-       
-        ,{
-            "path" : "pages/user-list/user-list",
-            "style" : {
+		}
+
+		, {
+			"path": "pages/user-list/user-list",
+			"style": {
 				"app-plus": {
 					"titleNView": {
 						"autoBackButton": false,
@@ -183,12 +177,26 @@
 					}
 				}
 			}
-        }
-        ,{
-            "path" : "pages/common-detail/common-detail",
-            "style" : {}
-        }
-    ],
+		}, {
+			"path": "pages/common-detail/common-detail",
+			"style": {
+
+			}
+		}, {
+			"path": "pages/person-space/person-space",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "menu"
+						}]
+
+					}
+				}
+			}
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "糗事百科",

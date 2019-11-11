@@ -1,5 +1,5 @@
 <template>
-	<view class="itemBox icon iconfont" :class="{'icon-nan showBoy':sex==0,'icon-nv showGirl':sex==1}">{{age}}</view>
+	<view class="itemBox icon iconfont mf-center" :class="{'icon-nan showBoy':sex==0,'icon-nv showGirl':sex==1}">{{age}}</view>
 </template>
 
 <script>

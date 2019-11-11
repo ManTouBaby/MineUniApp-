@@ -73,7 +73,7 @@
 
 		.nav-center {
 			margin-left: -44upx;
-
+			flex: 1;
 			view {
 				font-size: 35upx;
 				font-weight: bold;

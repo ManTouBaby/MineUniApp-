@@ -11,9 +11,9 @@
 }
 
 .mf-center {
-	flex: 1;
+	/* flex: 1; */
 	justify-content: center;
-	align-content: center;
+	align-items: center;
 }
 
 .mf-horizontal-center {
@@ -63,4 +63,8 @@
 
 .m-border-bottom {
 	border-bottom: solid #F1F1F1 2upx;
+}
+
+.m-click-bg{
+	background-color: #f1f1f1;
 }
