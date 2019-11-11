@@ -1,1 +1,0 @@
-<view class="{{['itemBox icon iconfont data-v-52ddc2a4',(sex==0)?'icon-nan showBoy':'',(sex==1)?'icon-nv showGirl':'']}}">{{age}}</view>

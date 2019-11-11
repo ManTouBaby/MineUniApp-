@@ -1,2 +1,0 @@
-setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"paperContent.",[1],"data-v-d95b1070 { padding: 0 ",[0,16],"; }\n.",[1],"popup-item.",[1],"data-v-d95b1070 { padding: 14px ",[0,24],"; width: ",[0,300],"; }\n.",[1],"popup-item.",[1],"data-v-d95b1070:before { margin-right: ",[0,8],"; }\n.",[1],"activity.",[1],"data-v-d95b1070 { background: #e1e1e1; }\n",],undefined,{path:"./pages/paper/paper.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/paper/paper.wxml') } }));

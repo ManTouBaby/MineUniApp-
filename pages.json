@@ -82,7 +82,7 @@
 			"style":{
 				"navigationBarTitleText":"我的",
 				"app-plus":{
-					"bounce":"none",
+					"bounce":"none ",
 					"titleNView":{
 						"buttons":[
 							{
