@@ -140,9 +140,6 @@ const indexDatas = [{
 		comment: 10,
 		sharenum: 15
 	}
-
-
-
 ]
 
 const dongtaiGZDates = [{

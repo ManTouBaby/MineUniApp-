@@ -1,12 +1,12 @@
 <template>
-	<view class="comment-list-box mf-horizontal-space-between animated fadeInLeft">
+	<view class="comment-list-box mf-horizontal-space-between animated fadeInLeft" @tap="openDetail">
 		<!-- 左边部分 -->
 		<view class="box-left">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>
 		</view>
 		
 		<!-- 右边部分 -->
-		<view class="box-right">
+		<view class="box-right" :class="{'m-border-bottom':isShowBoder}">
 			<!--  -->
 			<view class="line1 mf-horizontal-space-between">
 				<view class="mf-horizontal-start mf-vertical-center">
@@ -53,7 +53,11 @@
 			tagSexAge
 		},
 		props: {
-			item: Object
+			item: Object,
+			isShowBoder:{
+				type:Boolean,
+				default:true
+			}
 		},
 		data() {
 			return {
@@ -61,6 +65,13 @@
 				isDing:0 //0表示没有操作  1表示点赞
 			}
 		},
+		methods:{
+			openDetail(){
+				uni.navigateTo({
+					url: '../../pages/common-detail/common-detail?item='+encodeURI(JSON.stringify(this.item))
+				});
+			}
+		}
 	}
 </script>
 
@@ -79,11 +90,9 @@
 		}
 
 		.box-right {
-			// display: flex;
 			flex: 1;
 			margin-left: 16upx;
-			border-bottom: solid #F1F1F1 2upx;
-
+			
 			.line1 {
 				margin-bottom: $lineBottomSpace;
 

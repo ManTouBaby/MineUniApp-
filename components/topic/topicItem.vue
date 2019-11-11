@@ -1,5 +1,5 @@
 <template>
-	<view class="updateItem mf-horizontal-space-between  animated fadeInLeft" @tap="topicItemClick">
+	<view class="updateItem mf-horizontal-space-between  animated fadeInLeft m-border-bottom" @tap="topicItemClick">
 		<view class="updateItemImg">
 			<image :src="topicItem.imgUrl" mode="aspectFill" lazy-load></image>
 		</view>
@@ -40,7 +40,7 @@
 <style scoped lang="scss">
 	.updateItem {
 		padding: 16upx 16upx 16upx 0;
-		border-bottom: #e1e1e1 1upx solid;
+		// border-bottom: #e1e1e1 1upx solid;
 		.updateItemImg {
 			width: 180upx;
 			height: 180upx;
