@@ -10,7 +10,7 @@
 			</view>
 
 			<view class="second-commont">
-
+				<slot></slot>
 			</view>
 		</view>
 

@@ -5,9 +5,19 @@
 		<view class="commentContainer">
 			<view>最新评论</view>
 
-			<comment-item></comment-item>
+			<comment-item>
+				<view>
+					<comment-item></comment-item>
+					<comment-item></comment-item>
+					<comment-item></comment-item>
+				</view>
+			</comment-item>
 		</view>
 
+
+	<view>
+		
+	</view>
 	</view>
 </template>
 

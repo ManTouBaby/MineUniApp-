@@ -1,5 +1,5 @@
 <template>
-	<view class="updateItem mf-horizontal-space-between  animated fadeInLeft m-border-bottom" @tap="topicItemClick">
+	<view class="updateItem mf-horizontal-space-between  animated bounceInUp m-border-bottom" @tap="topicItemClick">
 		<view class="updateItemImg">
 			<image :src="topicItem.imgUrl" mode="aspectFill" lazy-load></image>
 		</view>

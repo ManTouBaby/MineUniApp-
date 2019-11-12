@@ -58,6 +58,23 @@ const userListNav = [{
 		num: 135
 	}
 ]
+
+const userSpaceNav = [{
+		name: "获赞",
+		index: 0,
+		num: 30
+	},
+	{
+		name: "关注",
+		index: 1,
+		num: 9
+	},
+	{
+		name: "粉丝",
+		index: 2,
+		num: 135
+	}
+]
 const indexDatas = [{
 		userpic: "/static/pic/userpic/1.jpg",
 		username: "张孝德",
@@ -485,5 +502,6 @@ export default {
 	topicRecommentNav,
 	paperList,
 	userListNav,
-	userList
+	userList,
+	userSpaceNav
 }

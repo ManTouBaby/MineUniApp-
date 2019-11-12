@@ -1,6 +1,5 @@
 <template>
-	<view>
-		<view class="m-border-bottom userItem mf-horizontal-space-between mf-vertical-center">
+		<view class="m-border-bottom userItem mf-horizontal-space-between mf-vertical-center animated bounceInUp">
 			<image :src="item1.userPic" mode="aspectFill"></image>
 			<view class="userName">
 				<view>{{item1.userName}}</view>
@@ -10,7 +9,6 @@
 			</view>
 			<view class="userType icon iconfont icon-zengjia1" :class="{'icon-xuanze-yixuan':item1.userRelation==0,'icon-zengjia1':item1.userRelation==2,'icon iconfont icon-guanbi1':item1.userRelation==1}"></view>
 		</view>
-	</view>
 </template>
 
 <script>

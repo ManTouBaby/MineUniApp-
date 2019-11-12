@@ -1,5 +1,5 @@
 <template>
-	<view class="paperItem mf-vertical-center animated fadeInLeft m-border-bottom">
+	<view class="paperItem mf-vertical-center animated bounceInUp m-border-bottom" @tap="openChat">
 		<view>
 			<image :src="item.userpic" mode="aspectFill" lazy-load></image>
 		</view>
@@ -29,6 +29,13 @@
 			return {
 			}
 		},
+		methods:{
+			openChat:function () {
+				uni.navigateTo({
+					url: '../../pages/chat/chat'
+				});
+			}
+		}
 	}
 </script>
 

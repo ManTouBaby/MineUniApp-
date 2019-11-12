@@ -196,7 +196,28 @@
 				}
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/chat/chat",
+            "style" : {
+				"navigationBarTitleText":"聊天界面",
+				"app-plus":{
+					"bounce":"none",
+					"titleNView":{
+						"buttons":[
+							{
+								"float": "right",
+								"text": "\ue628",
+								"colorPressed": "#BBBBBB",
+								"fontSrc": "/static/font/icon.ttf",
+								"fontSize": "22px",
+								"color": "#000000"
+							}
+						]
+					}
+				}
+			}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "糗事百科",

@@ -1,5 +1,5 @@
 <template>
-	<view class="comment-list-box mf-horizontal-space-between animated fadeInLeft" @tap="openDetail">
+	<view class="comment-list-box mf-horizontal-space-between animated bounceInUp" @tap="openDetail">
 		<!-- 左边部分 -->
 		<view class="box-left">
 			<image :src="item.userpic" mode="widthFix" lazy-load></image>

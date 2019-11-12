@@ -31,10 +31,7 @@
 		</view>
 		<view class="mine-menu-container mf-horizontal-center">
 			<block v-for="(item,index) in menuList" :key="index">
-				<view hover-class="m-click-bg">
-					<view class="mf-center">{{item.showCount}}</view>
-					<view class="mf-center">{{item.menuName}}</view>
-				</view>
+				<common-menu-item :itemName="item.menuName" :itemValue="item.menuValue"></common-menu-item>
 			</block>
 		</view>
 		<view class="ads-container">
@@ -50,31 +47,33 @@
 
 <script>
 	import mSettingItem from "@/components/base/m-setting-item.vue"
+	import commonMenuItem from '../../components/common/common-menu-item.vue'
 	export default {
 		components: {
-			mSettingItem
+			mSettingItem,
+			commonMenuItem
 		},
 		data() {
 			return {
 				islogin: true,
 				menuList: [{
 						menuName: '糗事',
-						showCount: 87,
+						menuValue: 87,
 						menuIndex: 0
 					},
 					{
 						menuName: '动态',
-						showCount: 10165,
+						menuValue: 10165,
 						menuIndex: 0
 					},
 					{
 						menuName: '评论',
-						showCount: 223,
+						menuValue: 223,
 						menuIndex: 0
 					},
 					{
 						menuName: '收藏',
-						showCount: 45,
+						menuValue: 45,
 						menuIndex: 0
 					}
 				]
@@ -163,26 +162,6 @@
 
 		.mine-menu-container {
 			padding: 24upx 0;
-
-			// .hoverClass {
-			// 	background-color: #f1f1f1;
-			// }
-
-			&>view {
-				width: 24%;
-				line-height: 1.2;
-
-
-				view:first-child {
-					color: #383838;
-					font-size: 34upx;
-				}
-
-				view:last-child {
-					color: #9F9F9F;
-					font-size: 24upx;
-				}
-			}
 		}
 
 		.ads-container {

@@ -1,5 +1,5 @@
 <template>
-	<view class="itemBox animated fadeInLeft m-border-bottom">
+	<view class="itemBox animated bounceInUp m-border-bottom">
 		<view class="line1 mf-horizontal-space-between">
 			<view class="mf-vertical-center ">
 				<image :src="item.userpic" mode="widthFix" lazy-load></image>
