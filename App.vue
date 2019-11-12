@@ -18,4 +18,5 @@
 	@import './common/animate.css';
 	@import './common/icon.css';
 	@import './common/base.css';
+	@import './common/im-icon.css';
 </style>
