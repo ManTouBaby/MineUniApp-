@@ -1,5 +1,5 @@
 <template>
-	<view class="imageContainer"  :style="{height:imgHeight,width:imgWidth}" >
+	<view class="imageContainer"  :style="{height:imgHeight,width:imgWidth}" @tap="openPersonSpace">
 		<image :src="imgUrl" :mode="imgMode" lazy-load />
 	</view>
 </template>
@@ -13,6 +13,13 @@
 			imgMode: {
 				type: String,
 				default: 'widthFix'
+			}
+		},
+		methods:{
+			openPersonSpace:function () {
+				uni.navigateTo({
+					url: '../../pages/person-space/person-space'
+				});
 			}
 		}
 	}

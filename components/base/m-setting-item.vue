@@ -1,5 +1,5 @@
 <template>
-	<view class="setting-item mf-horizontal-space-between" hover-class="hoverClass">
+	<view class="setting-item mf-horizontal-space-between" hover-class="hoverClass" @tap="onItemClick">
 		<view class="mf-vertical-center" :class="iconClass">
 			{{itemName}}
 		</view>
@@ -11,11 +11,12 @@
 	export default {
 		props: {
 			itemName: String,
+			itemIndex: Number,
+			iconClass: String,
 			isShowRightArrow: {
 				type: Boolean,
 				default: false
 			},
-			iconClass: String
 
 		},
 		data() {
@@ -23,6 +24,11 @@
 
 			}
 		},
+		methods: {
+			onItemClick: function() {
+				this.$emit("onItemClick", this.itemIndex)
+			}
+		}
 	}
 </script>
 
@@ -32,7 +38,7 @@
 			background-color: #f1f1f1;
 		}
 
-		padding:12upx 24upx;
+		padding: 24upx;
 		border-bottom: solid 1upx #F1F1F1;
 
 		view:first-child {

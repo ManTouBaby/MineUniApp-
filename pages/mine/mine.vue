@@ -82,7 +82,7 @@
 		methods: {
 			gotoSpace() {
 				uni.navigateTo({
-					url: '../person-space/person-space'
+					url:'../setting/setting'
 				});
 			}
 		}
