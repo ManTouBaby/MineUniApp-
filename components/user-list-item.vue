@@ -1,6 +1,7 @@
 <template>
 		<view class="m-border-bottom userItem mf-horizontal-space-between mf-vertical-center animated bounceInUp">
-			<image :src="item1.userPic" mode="aspectFill"></image>
+			<!-- <image :src="item1.userPic" mode="aspectFill"></image> -->
+			<common-image :imgUrl="item1.userPic"></common-image>
 			<view class="userName">
 				<view>{{item1.userName}}</view>
 				<view class="mf-horizontal-start">
@@ -13,9 +14,11 @@
 
 <script>
 	import tagSexAge from '@/components/common/tag-sex-age.vue'
+	import commonImage from "@/components/common/common-image.vue"
 	export default {
 		components:{
-			tagSexAge
+			tagSexAge,
+			commonImage
 		},
 		props:{
 			item1:Object

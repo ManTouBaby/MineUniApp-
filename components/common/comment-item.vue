@@ -1,6 +1,7 @@
 <template>
 	<view class="comment-item mf-horizontal-start">
-		<image src="../../static/userpic/1.jpg" mode="aspectFill"></image>
+		<!-- <image src="../../static/userpic/1.jpg" mode="aspectFill"></image> -->
+		<common-image :imgUrl="'../../static/userpic/1.jpg'" imgMode="'aspectFill'"></common-image>
 		<view class="first-comment">
 			<view>匿名</view>
 			<view>评论内容评论内容评论内容评论内容</view>
@@ -18,9 +19,13 @@
 </template>
 
 <script>
+	import commonImage from "@/components/common/common-image.vue"
 	export default {
+		components: {
+			commonImage
+		},
 		props: {
-			
+
 		}
 	}
 </script>

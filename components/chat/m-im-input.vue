@@ -19,10 +19,38 @@
 			<view class="send-message-btn mf-center" v-show="isShowSend">发送</view>
 		</view>
 		<view class="menu-container mf-horizontal-space-between " v-show="isOpenMenu">
-			<view class="mf-center icon im-icon icon-tupian"></view>
-			<view class="mf-center icon im-icon icon-xiangji"></view>
-			<view class="mf-center icon im-icon icon-shipingtonghua"></view>
-			<view class="mf-center icon im-icon icon-weizhi"></view>
+			<view @tap="pictrueChoice">
+				<view class="mf-horizontal-center">
+					<view class="mf-center icon im-icon icon-tupian" />
+				</view>
+				<view class="tag-name mf-horizontal-center">
+					相册
+				</view>
+			</view>
+			<view @tap="shootClick">
+				<view class="mf-horizontal-center">
+					<view class="mf-center icon im-icon icon-xiangji" />
+				</view>
+				<view class="tag-name mf-horizontal-center">
+					拍摄
+				</view>
+			</view>
+			<view @tap="videoCallClick">
+				<view class="mf-horizontal-center">
+					<view class="mf-center icon im-icon icon-shipingtonghua" />
+				</view>
+				<view class="tag-name mf-horizontal-center">
+					视频通话
+				</view>
+			</view>
+			<view @tap="locationClick">
+				<view class="mf-horizontal-center">
+					<view class="mf-center icon im-icon icon-weizhi" />
+				</view>
+				<view class="tag-name mf-horizontal-center">
+					位置
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -34,43 +62,71 @@
 				isRecord: false,
 				isChoiceExpression: false,
 				isShowSend: false,
-				isOpenMenu: false
+				isOpenMenu: false,
 			};
 		},
 		methods: {
+			//单击键盘按钮，开启键盘输入
 			recordJPClick: function() {
 				this.isRecord = !this.isRecord;
 			},
+			//单击语音输入按钮
 			recordClick: function() {
 				this.isRecord = !this.isRecord;
 			},
+			//打开菜单
+			openMenu: function() {
+				this.isOpenMenu = !this.isOpenMenu;
+			},
+			//监听输入框
 			onInput: function(label) {
 				if (label.detail.value.length > 0) {
 					this.isShowSend = true;
 				} else {
 					this.isShowSend = false;
 				}
-				// console.log(label.detail);
 			},
-			openMenu: function() {
-				console.log("单击按钮");
-				this.isOpenMenu = !this.isOpenMenu;
+			//进行图片选择
+			pictrueChoice:function () {
+				uni.chooseImage({
+				    count: 6, //默认9
+				    sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+				    sourceType: ['album'], //从相册选择
+				    success: function (res) {
+				        console.log(JSON.stringify(res.tempFilePaths));
+				    }
+				});
+			},
+			//进行拍照选择
+			shootClick:function () {
+				
+			},
+			//进行视屏录制
+			videoCallClick:function () {
+				
+			},
+			//发送当前定位
+			locationClick:function () {
+				
 			}
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	$backgroundColor:#F5F5F5;
+	$inputBackGroundColor:#FFFFFF;
+
 	.input-container {
 		position: fixed;
-		bottom: 0;
+		bottom: -4upx;
 		left: 0;
 		right: 0;
 
 		.m-message-input {
 			height: 110upx;
-			background-color: #FFFFFF;
-			border-top: 1upx #F1F1F1 solid;
+			background-color: $backgroundColor;
+			border-top: 1upx #E7E7E7 solid;
 
 			.click-bg {
 				background-color: #d1d1d1;
@@ -78,16 +134,16 @@
 
 			input {
 				flex: 1;
-				background-color: #F7F7F7;
+				background-color: $inputBackGroundColor;
 				border-radius: 12upx;
 				height: 74upx;
 				padding: 0 16upx;
 			}
 
 			button {
-				height: 64upx;
+				height: 74upx;
 				flex: 1;
-				background-color: #F7F7F7;
+				background-color: $inputBackGroundColor;
 				border-radius: 8upx;
 				color: #404040;
 				font-size: 30upx;
@@ -106,22 +162,34 @@
 				padding: 6upx 12upx;
 				background-color: #1AAD19;
 				border-radius: 6upx;
-				font-size: 24upx;
+				font-size: 22upx;
 				color: #FFFFFF;
 			}
 		}
 
 		.menu-container {
-			border-top: 1upx #F1F1F1 solid;
+			border-top: 1upx #E7E7E7 solid;
 			padding: 32upx;
+			background-color: $backgroundColor;
 
-			view {
-				width: 100upx;
-				height: 100upx;
-				border-radius: 16upx;
-				background-color: #F1F1F1;
-				font-size: 50upx;
+			&>view {
+				width: 25%;
+
+				.mf-center {
+					width: 100upx;
+					height: 100upx;
+					border-radius: 16upx;
+					background-color: $inputBackGroundColor;
+					font-size: 50upx;
+				}
+				.tag-name {
+					margin-top: 4upx;
+					font-size: 24upx;
+					color: #989898;
+				}
 			}
+
+
 		}
 	}
 </style>

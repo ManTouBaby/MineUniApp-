@@ -1,7 +1,8 @@
 <template>
 	<view class="paperItem mf-vertical-center animated bounceInUp m-border-bottom" @tap="openChat">
 		<view>
-			<image :src="item.userpic" mode="aspectFill" lazy-load></image>
+			<!-- <image :src="item.userpic" mode="aspectFill" lazy-load></image> -->
+			<common-image :imgUrl="item.userpic"></common-image>
 		</view>
 		<view>
 			<view class="mf-horizontal-space-between">
@@ -18,19 +19,20 @@
 
 <script>
 	import uniBadge from '../../components/uni-badge/uni-badge.vue'
-	export default{
-		components:{
-			uniBadge
+	import commonImage from "@/components/common/common-image.vue"
+	export default {
+		components: {
+			uniBadge,
+			commonImage
 		},
-		props:{
-			item:Object
+		props: {
+			item: Object
 		},
 		data() {
-			return {
-			}
+			return {}
 		},
-		methods:{
-			openChat:function () {
+		methods: {
+			openChat: function() {
 				uni.navigateTo({
 					url: '../../pages/chat/chat'
 				});
@@ -43,35 +45,35 @@
 	.paperItem {
 		padding: 16upx 0;
 		// border-bottom: #e1e1e1 1upx solid;
-	
+
 		&>view:first-child {
-			image {
-				width: 100upx;
-				height: 100upx;
-	
-				border-radius: 100%;
-				margin-right: 12upx;
-				flex-grow: 0;
-			}
+			// image {
+			// 	width: 100upx;
+			// 	height: 100upx;
+
+			// 	border-radius: 100%;
+			// 	margin-right: 12upx;
+			// 	flex-grow: 0;
+			// }
 		}
-	
+
 		&>view:last-child {
 			flex: 1;
-	
+
 			.userName {
 				color: #262626;
 				font-size: 30upx;
 			}
-	
+
 			.updateTime {
 				color: #DBDBDB;
 				font-size: 28upx;
 			}
-	
+
 			.newMSG {
 				color: #A5a5a5;
 				font-size: 28upx;
-	
+
 				uniBadge {
 					flex-grow: 0;
 				}

@@ -2,9 +2,10 @@
 	<view class="comment-list-box mf-horizontal-space-between animated bounceInUp" @tap="openDetail">
 		<!-- 左边部分 -->
 		<view class="box-left">
-			<image :src="item.userpic" mode="widthFix" lazy-load></image>
+			<!-- <image :src="item.userpic" mode="widthFix" lazy-load></image> -->
+			<common-image :imgUrl="item.userpic"></common-image>
 		</view>
-		
+
 		<!-- 右边部分 -->
 		<view class="box-right" :class="{'m-border-bottom':isShowBoder}">
 			<!--  -->
@@ -48,27 +49,29 @@
 
 <script>
 	import tagSexAge from "@/components/common/tag-sex-age.vue"
+	import commonImage from "@/components/common/common-image.vue"
 	export default {
-		components:{
-			tagSexAge
+		components: {
+			tagSexAge,
+			commonImage
 		},
 		props: {
 			item: Object,
-			isShowBoder:{
-				type:Boolean,
-				default:true
+			isShowBoder: {
+				type: Boolean,
+				default: true
 			}
 		},
 		data() {
 			return {
 				isGuangZhu: false,
-				isDing:0 //0表示没有操作  1表示点赞
+				isDing: 0 //0表示没有操作  1表示点赞
 			}
 		},
-		methods:{
-			openDetail(){
+		methods: {
+			openDetail() {
 				uni.navigateTo({
-					url: '../../pages/common-detail/common-detail?item='+encodeURI(JSON.stringify(this.item))
+					url: '../../pages/common-detail/common-detail?item=' + encodeURI(JSON.stringify(this.item))
 				});
 			}
 		}
@@ -92,11 +95,12 @@
 		.box-right {
 			flex: 1;
 			margin-left: 16upx;
-			
+
 			.line1 {
 				margin-bottom: $lineBottomSpace;
 
 				view:first-child {
+
 					//昵称
 					view:first-child {
 						font-size: 24upx;
