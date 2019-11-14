@@ -10,6 +10,14 @@
 	display: flex;
 }
 
+.mf-column {
+	flex-direction: column;
+}
+
+.mf-row {
+	flex-direction: row;
+}
+
 .mf-center {
 	/* flex: 1; */
 	justify-content: center;
@@ -65,11 +73,11 @@
 	border-bottom: solid #F1F1F1 2upx;
 }
 
-.m-click-bg{
+.m-click-bg {
 	background-color: #f1f1f1;
 }
 
-.m-line-space{
+.m-line-space {
 	background-color: #f1f1f1;
 	height: 1upx;
 	flex: 1;

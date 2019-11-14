@@ -176,27 +176,5 @@
 			}
 		}
 
-		.setting-list {
-			.setting-item {
-				padding: 12upx 24upx;
-				border-bottom: solid 1upx #F1F1F1;
-
-				view:first-child {
-					color: #343434;
-					font-size: 28upx;
-
-					&:before {
-						font-size: 40upx;
-						color: #57BBFF;
-						margin-right: 8upx;
-					}
-				}
-
-				view:last-child {
-					color: #C6C6C6;
-				}
-			}
-
-		}
 	}
 </style>

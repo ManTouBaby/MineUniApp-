@@ -26,6 +26,7 @@
 		},
 		methods: {
 			onItemClick: function() {
+				// console.log("组件内部单击测试:"+this.itemIndex);
 				this.$emit("onItemClick", this.itemIndex)
 			}
 		}
@@ -34,17 +35,19 @@
 
 <style lang="scss" scoped>
 	.setting-item {
+		flex: 1;
+		width: 100%;
 		&.hoverClass {
 			background-color: #f1f1f1;
 		}
 
-		padding: 24upx;
+		padding: 24upx 0;
 		border-bottom: solid 1upx #F1F1F1;
 
 		view:first-child {
 			color: #343434;
 			font-size: 28upx;
-
+			margin-left: 24upx;
 			&:before {
 				font-size: 40upx;
 				color: #57BBFF;
@@ -54,6 +57,7 @@
 
 		view:last-child {
 			color: #C6C6C6;
+			margin-right: 24upx;
 		}
 	}
 </style>

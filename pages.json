@@ -223,6 +223,36 @@
 				"navigationBarTitleText":"设置"
 			}
         }
+        ,{
+            "path" : "pages/setting-about/setting-about",
+            "style" : {
+				"navigationBarTitleText":"关于仿糗百"
+			}
+        }
+        ,{
+            "path" : "pages/setting-email/setting-email",
+            "style" : {
+				"navigationBarTitleText":"绑定邮箱"
+			}
+        }
+        ,{
+            "path" : "pages/setting-edit-msg/setting-edit-msg",
+            "style" : {
+				"navigationBarTitleText":"资料编辑"
+			}
+        }
+        ,{
+            "path" : "pages/setting-change-ps/setting-change-ps",
+            "style" : {
+				"navigationBarTitleText":"修改密码"
+			}
+        }
+        ,{
+            "path" : "pages/setting-idea-report/setting-idea-report",
+            "style" : {
+				"navigationBarTitleText":"意见反馈"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

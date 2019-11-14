@@ -1,10 +1,7 @@
 <template>
 	<view>
 		<block v-for="(item,index) in settingDates" :key="index">
-			<m-setting-item 
-			:itemIndex="item.itemIndex" 
-			:itemName="item.settingName" 
-			 @onItemClick="onItemClick" 
+			<m-setting-item :itemIndex="item.settingIndex" :itemName="item.settingName" @onItemClick="onItemClick"
 			 :isShowRightArrow="true" />
 		</block>
 
@@ -46,21 +43,36 @@
 		},
 		methods: {
 			onItemClick: function(index) {
-				console.log("当前单击条数:" + index);
+				// console.log("当前单击条数:" + index);
 				switch (index) {
 					case 0:
+					uni.navigateTo({
+						url: '../setting-change-ps/setting-change-ps'
+					});
 						break;
 					case 1:
+						uni.navigateTo({
+							url: '../setting-email/setting-email'
+						});
 						break;
 					case 2:
+					uni.navigateTo({
+						url: '../setting-edit-msg/setting-edit-msg'
+					});
 						break;
 					case 3:
 						break;
 					case 4:
 						break;
 					case 5:
+					uni.navigateTo({
+						url: '../setting-idea-report/setting-idea-report'
+					});
 						break;
 					case 6:
+						uni.navigateTo({
+							url: '../setting-about/setting-about'
+						});
 						break;
 
 				}
