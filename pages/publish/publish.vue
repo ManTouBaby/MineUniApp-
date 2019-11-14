@@ -5,13 +5,11 @@
 		<!-- 标题栏 -->
 		<uni-nav-bar fixed="true" :status-bar="true" left-icon="arrowleft" right-text="发布" @click-left="backClick"
 		 @click-right="publish">
-			<view class="mf-center" @tap="privacyClick">
+			<view class="privacyContainer mf-center" @tap="privacyClick">
 				{{privacy}}
 				<view class="icon iconfont icon-xialazhankai"></view>
 			</view>
 		</uni-nav-bar>
-
-
 
 		<scroll-view scroll-y="true">
 			<view>
@@ -26,22 +24,20 @@
 		</scroll-view>
 
 
-		<m-popup :isShow="isShow" :showType="'center'" @onPopupOutsideClick="onPopupOutsideClick">
-			<block>
-				<view class="popup-container">
-					<view class="mf-center"><image class="popup-img" src="../../static/addinput.png" mode="widthFix" /></view>
-					<view class="popup-content">
-						<view class="mf-horizontal-center">1.发布内容不能涉及黄、赌、毒</view>
-						<view class="mf-horizontal-center">2.发布内容不能涉及黄、赌、毒</view>
-						<view class="mf-horizontal-center">3.发布内容不能涉及黄、赌、毒</view>
-						<view class="mf-horizontal-center">4.发布内容不能涉及黄、赌、毒</view>
-					</view>
-					<button type="primary" class="popup-btn" @tap="iKnowClick">朕知道了</button>
-				</view>
-			</block>
-
-		</m-popup>
-
+	<uni-popup ref="popup" :show="isShow" :type="'center'" :custom="true" :mask-click="false">
+		<view class="popup-container">
+			<view class="mf-center">
+				<image class="popup-img" src="../../static/addinput.png" mode="widthFix" />
+			</view>
+			<view class="popup-content">
+				<view class="mf-horizontal-center">1.发布内容不能涉及黄、赌、毒</view>
+				<view class="mf-horizontal-center">2.发布内容不能涉及黄、赌、毒</view>
+				<view class="mf-horizontal-center">3.发布内容不能涉及黄、赌、毒</view>
+				<view class="mf-horizontal-center">4.发布内容不能涉及黄、赌、毒</view>
+			</view>
+			<button type="primary" class="popup-btn" @tap="iKnowClick">朕知道了</button>
+		</view>
+	</uni-popup>
 
 	</view>
 </template>
@@ -50,6 +46,7 @@
 	import uniNavBar from '../../components/uni-nav-bar/uni-nav-bar.vue'
 	import imgUpload from '../../components/base/img-upload.vue'
 	import mPopup from '../../components/base/m-popup.nvue'
+	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 
 	let privacyList = ["仅自己可见", "所有人可见"];
 
@@ -57,7 +54,8 @@
 		components: {
 			uniNavBar,
 			imgUpload,
-			mPopup
+			mPopup,
+			uniPopup
 		},
 		data() {
 			return {
@@ -65,9 +63,13 @@
 				imageList: [],
 				textareaLable: "",
 
-				isShow: true,
+				isShow: false,
 				noback: true
 			}
+		},
+		mounted() {
+			console.log(this.$refs);
+			this.isShow = true;
 		},
 		onBackPress() {
 			console.log("捕捉返回按钮");
@@ -92,6 +94,8 @@
 			//单击发布按钮
 			publish() {
 				console.log("单击发布按钮");
+				
+				
 			},
 			//单击隐私按钮
 			privacyClick() {
@@ -147,17 +151,24 @@
 </script>
 
 <style scoped lang="scss">
-	
-	.textareaContainer{
+	.textareaContainer {
 		padding: 16upx;
 	}
-	
-	.contentClass{
+
+	.privacyContainer {
+		flex: 1;
+		margin-left: -64upx;
+	}
+
+	.contentClass {
 		margin-left: -250upx;
 	}
+
 	.popup-container {
+		background-color: #FFFFFF;
 		width: 500upx;
 		padding: 32upx;
+		border-radius: 16upx;
 
 		.popup-img {
 			width: 80%;
@@ -171,5 +182,47 @@
 			margin-top: 24upx;
 			background-color: #FFE934;
 		}
+	}
+
+
+	/* 提示窗口 */
+	.uni-tip {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		flex-direction: column;
+		/* #endif */
+		padding: 15px;
+		width: 300px;
+		background-color: #fff;
+		border-radius: 10px;
+	}
+
+	.uni-tip-title {
+		text-align: center;
+		font-weight: bold;
+		font-size: 16px;
+		color: #333;
+	}
+
+	.uni-tip-content {
+		/* padding: 15px;
+ */
+		font-size: 14px;
+		color: #666;
+	}
+
+	.uni-tip-group-button {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		margin-top: 20px;
+	}
+
+	.uni-tip-button {
+		flex: 1;
+		text-align: center;
+		font-size: 14px;
+		color: #3b4144;
 	}
 </style>

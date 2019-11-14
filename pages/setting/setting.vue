@@ -1,7 +1,10 @@
 <template>
 	<view>
 		<block v-for="(item,index) in settingDates" :key="index">
-			<m-setting-item :itemIndex="item.settingIndex" :itemName="item.settingName" @onItemClick="onItemClick"
+			<m-setting-item 
+			:itemIndex="item.settingIndex" 
+			:itemName="item.settingName" 
+			@onItemClick="onItemClick"
 			 :isShowRightArrow="true" />
 		</block>
 
