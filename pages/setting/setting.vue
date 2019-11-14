@@ -4,8 +4,8 @@
 			<m-setting-item 
 			:itemIndex="item.itemIndex" 
 			:itemName="item.settingName" 
-			 @onItemClick="onItemClick" 
-			 :isShowRightArrow="true" />
+			@onItemClick="onItemClick"
+			:isShowRightArrow="true" />
 		</block>
 
 		<button class="loginOut" type="primary" @tap="loginOutClick">退出登录</button>

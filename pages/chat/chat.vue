@@ -10,10 +10,7 @@
 			</view>
 
 		</scroll-view>
-
-
 		<m-im-input></m-im-input>
-
 	</view>
 </template>
 
@@ -25,21 +22,9 @@
 			mImInput,
 			mImItem
 		},
-		props: {
-			msgTime: String, //消息发送时间
-			msgType: { //消息类型  0:文字消息  1:语音消息  2:图片消息  3:视屏消息
-				type: Number,
-				default: 0
-			},
-			msgLabel: String, //文字消息内容
-			msgFilePath: String, //语音、图片、视屏路径
-			playTime: String //语音或者视屏播放时间
-		},
+		props: {},
 		data() {
 			return {
-				isShowLeft: false,
-				isTakePhoto: false,
-
 				contentHeight: 0
 			};
 		},
@@ -68,20 +53,5 @@
 </script>
 
 <style lang="scss" scoped>
-	// .content {
-	// 	position: relative;
-	// }
-	.takePhoto {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
 
-		background-color: #222222;
-	}
-
-	.chat-list-container {
-		// margin-bottom: 100upx;
-	}
 </style>
