@@ -24,7 +24,7 @@
 
 <script>
 	import json from "../../json.js"
-	import userListItem from '../../components/user-list-item.vue'
+	import userListItem from '../../components/user-list/user-list-item.vue'
 	export default {
 		components: {
 			userListItem
