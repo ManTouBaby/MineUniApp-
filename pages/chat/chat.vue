@@ -58,6 +58,7 @@
 					console.log(JSON.stringify(res));
 				})
 			},
+			//初始化ScrollView 高度
 			initScroll: function() {
 				let system = uni.getSystemInfoSync();
 				this.contentHeight = system.windowHeight - uni.upx2px(110);
