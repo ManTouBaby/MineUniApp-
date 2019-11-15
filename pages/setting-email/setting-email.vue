@@ -2,7 +2,7 @@
 	<view>
 		<input type="text" placeholder="输入你要绑定的邮箱" />
 		<input type="text" placeholder="请输入密码" />
-		<button type="primary">确定</button>
+		<button type="primary" class="default-btn default-btn-disable">确定</button>
 	</view>
 </template>
 
@@ -10,19 +10,17 @@
 	export default {
 		data() {
 			return {
-				
+
 			};
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-input{
-	padding: 24upx 16upx;
-	border-bottom: #f1f1f1 1upx solid;
-}
-button{
-	margin: 36upx 16upx 0;
-	background-color: #F4F4F4;
-}
+	@import "../../common/default-btn.css";
+
+	input {
+		padding: 24upx 16upx;
+		border-bottom: #f1f1f1 1upx solid;
+	}
 </style>

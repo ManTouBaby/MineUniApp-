@@ -38,9 +38,9 @@
 			<image src="../../static/datapic/13.jpg" mode="aspectFill" />
 		</view>
 		<view class="setting-list">
-			<m-setting-item iconClass="icon iconfont icon-huiyuanvip" :itemName="'糗百认证'" :isShowRightArrow="true"></m-setting-item>
-			<m-setting-item v-if="islogin" iconClass="icon iconfont icon-icon_im_keyboard" :itemName="'审核糗事'" :isShowRightArrow="true"></m-setting-item>
-			<m-setting-item iconClass="icon iconfont icon-liulan" :itemName="'浏览历史'" :isShowRightArrow="true"></m-setting-item>
+			<m-setting-item iconClass="icon iconfont icon-huiyuanvip" :itemName="'糗百认证'" :isShowRightArrow="true"/>
+			<m-setting-item v-if="islogin" iconClass="icon iconfont icon-icon_im_keyboard" :itemName="'审核糗事'" :isShowRightArrow="true"/>
+			<m-setting-item iconClass="icon iconfont icon-liulan" :itemName="'浏览历史'" :isShowRightArrow="true"/>
 		</view>
 	</view>
 </template>
@@ -79,11 +79,14 @@
 				]
 			}
 		},
+		onNavigationBarButtonTap(res) {
+			uni.navigateTo({
+				url:'../setting/setting'
+			});
+		},
 		methods: {
 			gotoSpace() {
-				uni.navigateTo({
-					url:'../setting/setting'
-				});
+			
 			}
 		}
 	}

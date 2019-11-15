@@ -1,0 +1,13 @@
+.default-btn {
+	margin: 100upx 32upx 0;
+}
+
+.default-btn-disable {
+	color: #919191;
+	background-color: #F4F4F4;
+}
+
+.default-btn-enable {
+	background-color: #FFE933;
+	color: #1A1705;
+}

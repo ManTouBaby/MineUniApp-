@@ -129,8 +129,8 @@
 					border-radius: 8upx;
 	
 					image {
-						max-width: 300upx;
-						// max-height: 300upx;
+						width: 300upx;
+						height: 300upx;
 					}
 				}
 	

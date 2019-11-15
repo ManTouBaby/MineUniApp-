@@ -8,7 +8,7 @@
 			 :isShowRightArrow="true" />
 		</block>
 
-		<button class="loginOut" type="primary" @tap="loginOutClick">退出登录</button>
+		<button class="default-btn default-btn-enable" type="primary" @tap="loginOutClick">退出登录</button>
 	</view>
 </template>
 
@@ -88,9 +88,5 @@
 </script>
 
 <style lang="scss">
-	.loginOut {
-		margin: 100upx 32upx 0;
-		background-color: #FFE933;
-		// color: #181605;
-	}
+	@import "../../common/default-btn.css";
 </style>

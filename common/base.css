@@ -73,6 +73,10 @@
 	border-bottom: solid #F1F1F1 2upx;
 }
 
+.m-border-top {
+	border-top: #f1f1f1 2upx solid;
+}
+
 .m-click-bg {
 	background-color: #f1f1f1;
 }

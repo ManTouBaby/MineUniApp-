@@ -6,7 +6,7 @@
 			<!-- 录音按钮 -->
 			<view class="icon im-icon icon-luyin mf-center" v-show="!isRecord" @tap="recordClick" />
 			<!-- 文字输入框 -->
-			<input type="text" placeholder="输入消息" @input="onInput" v-show="!isRecord" />
+			<input type="text" placeholder="输入消息" @input="onInput" v-show="!isRecord"/>
 			<!-- 录音按钮 -->
 			<button type="primary" class="mf-center" hover-class="click-bg" v-show="isRecord">按住 说话</button>
 			<!-- 表情按钮 -->
@@ -16,7 +16,7 @@
 			<!-- 加号按钮 用于打开菜单 -->
 			<view class="icon im-icon icon-zengjia mf-center" @tap="openMenu" v-show="!isShowSend" />
 			<!-- 发送按钮 -->
-			<view class="send-message-btn mf-center" v-show="isShowSend">发送</view>
+			<view class="send-message-btn mf-center" v-show="isShowSend" @tap="sendMsg">发送</view>
 		</view>
 		<view class="menu-container mf-horizontal-space-between " v-show="isOpenMenu">
 			<view @tap="pictrueChoice">
@@ -63,9 +63,15 @@
 				isChoiceExpression: false,
 				isShowSend: false,
 				isOpenMenu: false,
+				
+				msgLabel:""
 			};
 		},
 		methods: {
+			//发送消息
+			sendMsg:function () {
+				this.$emit("sendMsg",this.msgLabel);
+			},
 			//单击键盘按钮，开启键盘输入
 			recordJPClick: function() {
 				this.isRecord = !this.isRecord;
@@ -80,6 +86,7 @@
 			},
 			//监听输入框
 			onInput: function(label) {
+				this.msgLabel = label.detail.value;
 				if (label.detail.value.length > 0) {
 					this.isShowSend = true;
 				} else {
