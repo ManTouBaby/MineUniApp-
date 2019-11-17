@@ -253,6 +253,15 @@
 				"navigationBarTitleText":"意见反馈"
 			}
         }
+        ,{
+            "path" : "pages/login/login",
+            "style" : {
+				"app-plus":{
+					"titleNView":false,
+					"bounce":"none"
+				}
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

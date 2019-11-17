@@ -1,19 +1,9 @@
 <template>
 	<view class="mine-container">
-		<view v-if="!islogin" class="loginContainer">
-			<view v-if="false" class="loginTypeTitle mf-horizontal-center">
-				选择登录方式
-			</view>
-			<view class="loginTypeContainer mf-horizontal-space-between">
-				<view class="icon iconfont icon-weixin mf-horizontal-center mf-vertical-center"></view>
-				<view class="icon iconfont icon-QQ  mf-horizontal-center mf-vertical-center"></view>
-				<view class="icon iconfont icon-xinlangweibo  mf-horizontal-center mf-vertical-center"></view>
-			</view>
-
-			<view class="accountLogin mf-horizontal-center">
-				账号密码登录
-				<view class="icon iconfont icon-jinru mf-vertical-center"></view>
-			</view>
+		<view v-if="!islogin">
+			<other-login></other-login>
+			
+			<labelEnter @labelEnterClick="accountLogin">账号密码登录</labelEnter>
 		</view>
 		<view v-if="islogin" class="user-info-container mf-horizontal-start" @tap="gotoSpace" hover-class="m-click-bg">
 			<image src="../../static/userpic/10.jpg" mode="widthFix" />
@@ -48,14 +38,18 @@
 <script>
 	import mSettingItem from "@/components/base/m-setting-item.vue"
 	import commonMenuItem from '../../components/common/common-menu-item.vue'
+	import otherLogin from "../../components/common/other-login.vue"
+	import labelEnter from "../../components/common/label-enter.vue"
 	export default {
 		components: {
 			mSettingItem,
-			commonMenuItem
+			commonMenuItem,
+			otherLogin,
+			labelEnter
 		},
 		data() {
 			return {
-				islogin: true,
+				islogin: false,
 				menuList: [{
 						menuName: '糗事',
 						menuValue: 87,
@@ -87,6 +81,11 @@
 		methods: {
 			gotoSpace() {
 			
+			},
+			accountLogin:function () {
+				uni.navigateTo({
+					url: '../login/login'
+				});
 			}
 		}
 	}
@@ -96,45 +95,7 @@
 	.mine-container {
 		padding: 0 16upx;
 
-		.loginContainer {
-			padding: 0 100upx;
 
-			.loginTypeTitle {
-				margin: 16upx 0;
-			}
-
-			.loginTypeContainer {
-				view {
-					color: #FFFFFF;
-					font-size: 44upx;
-					width: 100upx;
-					height: 100upx;
-					border-radius: 100%;
-				}
-
-				view:nth-of-type(1) {
-					background-color: #2BD19B;
-				}
-
-				view:nth-of-type(2) {
-					background-color: #007AFF;
-				}
-
-				view:nth-of-type(3) {
-					background-color: #FC7729;
-				}
-			}
-
-			.accountLogin {
-				color: #474747;
-				margin-top: 36upx;
-
-				view {
-					margin-left: 8upx;
-					color: #C6C6C6;
-				}
-			}
-		}
 
 		.user-info-container {
 			padding: 12upx 20upx 12upx 16upx;
